@@ -1,0 +1,65 @@
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+<HEAD>
+   <TITLE>Class Chat</TITLE>
+   <meta charset="UTF-8">
+   <meta name="description" content="Class Chat">
+   <meta name="author" content="Tim Reardon">
+
+</HEAD>
+
+<BODY style="background-color:powderblue;padding:20px;">
+<img src="Chat logo.png" alt="LOGO"
+style="Width:200px;height:200px;float:center;">
+<h1 style="text-align:center;">Welcome to Class Chat</h1>
+<address style="text-align:center;">
+Written by Group Class Chat
+</address>
+<p id="Message"></p>
+
+<form action="login_page.php">
+<fieldset>
+<legend>Login</legend>
+   Username: <input type="text" name="user"><br>
+   Password: <input type="password" name="passwd"><br>
+   <input type="submit" value="Login">
+</fieldset>
+</form>
+<form action="register_page.php">
+<fieldset>
+<legend>Register</legend>
+   Full name:<input type="text" name="userName"><br>
+   E-Mail:<input type="email" name="userEmail"><br>
+   Password:<input type="password" name="userPasswd"><br>
+   Retype password:<input type="password" name="verifyPasswd"><br>
+   <input type="submit" value="Register">
+   <input type="reset">
+</fieldset>
+</form>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAHf7kwzhCiYN0GUkfxNMrdbuvFDqwCO60",
+    authDomain: "class-chat-8ff3b.firebaseapp.com",
+    databaseURL: "https://class-chat-8ff3b.firebaseio.com",
+    storageBucket: "class-chat-8ff3b.appspot.com",
+    messagingSenderId: "118348998164"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+function login(){
+	document.getElementById('Message').innerHTML='Proceeding with your login request...'";
+}
+
+function register(){
+	document.getElementById('Message').innerHTML='Proceeding with your register request...'";
+}
+
+</script>
+</BODY>
+</HTML>
