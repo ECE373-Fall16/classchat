@@ -1,0 +1,24 @@
+***********PLEASE READ***********
+
+**********REQUIREMENTS***********
+Time
+Apple ID registered with free level of Apple Developer
+MacOS with admin priveledges
+Xcode
+Apple Device => iphone 5
+
+************HOW-TO***************
+1. Install Xcode
+2. Install cocoapods
+    A. Go to terminal and run the following commands
+        sudo gem install cocoapods
+        pod setup --verbose
+3. Install project specific Pods
+    A. Go to terminal and run the following commands
+        cd ~/path/to/downloaded/files
+        pod install
+
+
+
+
+

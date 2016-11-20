@@ -12,6 +12,7 @@
 		45A0D8FE1D49508800F26729 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0D8FD1D49508800F26729 /* CreateChannelCell.swift */; };
 		45A0D9011D4BB5E900F26729 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0D9001D4BB5E900F26729 /* Channel.swift */; };
 		45B210371D3B740700DB4827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45B210361D3B740700DB4827 /* GoogleService-Info.plist */; };
+		8405D8581DE13AD800E3E296 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 8405D8571DE13AD700E3E296 /* README */; };
 		847BC18D1DD6A08600309EE7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847BC18C1DD6A08600309EE7 /* ProfileViewController.swift */; };
 		84C6909E1DD542F3001EC1F2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6909D1DD542F3001EC1F2 /* Profile.swift */; };
 		BB53557A1BEF765800321277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5355791BEF765800321277 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		45A0D8FD1D49508800F26729 /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
 		45A0D9001D4BB5E900F26729 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		45B210361D3B740700DB4827 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8405D8571DE13AD700E3E296 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		840980761DCAD78F00CBB232 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		847BC18C1DD6A08600309EE7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		84C6909D1DD542F3001EC1F2 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		BB53556D1BEF765800321277 = {
 			isa = PBXGroup;
 			children = (
+				8405D8571DE13AD700E3E296 /* README */,
 				BB5355781BEF765800321277 /* ClassChat */,
 				BB5355771BEF765800321277 /* Products */,
 				85DB15776B3ACE41DF631DCF /* Pods */,
@@ -222,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8405D8581DE13AD800E3E296 /* README in Resources */,
 				BB5355841BEF765800321277 /* LaunchScreen.storyboard in Resources */,
 				45B210371D3B740700DB4827 /* GoogleService-Info.plist in Resources */,
 				BB5355811BEF765800321277 /* Assets.xcassets in Resources */,
