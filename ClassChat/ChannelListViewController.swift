@@ -193,7 +193,23 @@ class ChannelListViewController: UITableViewController {
     //}
     
     @IBAction func signoutButtonPressed(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "Are you sure you want to log out",
+                                      message: "",
+                                      preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "Yes",
+                                      style: .default) { action in
+                                        self.dismiss(animated: true, completion: nil)
+        }
+        let noAction = UIAlertAction(title: "No",
+                                       style: .default)
+
+        
+        alert.addAction(yesAction)
+        alert.addAction(noAction)
+        
+        self.present(alert, animated: true, completion: nil)
+        return
     }
   
 }
