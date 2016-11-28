@@ -118,9 +118,9 @@ class LoginViewController: UIViewController {
 													self.present(alert, animated: true, completion: nil)
 												}
 											}
-										}else if (FnameField.text == ""){
+										}else if ((FnameField.text == "") || (emailField.text == "") || (passwordField.text == "") || (vpasswordField.text == "")){
 											let alert = UIAlertController(title: "Error",
-											                              message: "Please Enter First and Last Name and try again",
+											                              message: "Please Fill in all Fields and try again",
 											                              preferredStyle: .alert)
 											
 											let okayAction = UIAlertAction(title: "Okay",
@@ -130,21 +130,6 @@ class LoginViewController: UIViewController {
 											
 											self.present(alert, animated: true, completion: nil)
 											return
-
-											
-										}else if (emailField.text == ""){
-											let alert = UIAlertController(title: "Error",
-											                              message: "Please enter a valid UMass email address and try again",
-											                              preferredStyle: .alert)
-											
-											let okayAction = UIAlertAction(title: "Okay",
-											                               style: .default)
-											
-											alert.addAction(okayAction)
-											
-											self.present(alert, animated: true, completion: nil)
-											return
-
 											
 										}else if !(umassemail?.hasSuffix("umass.edu"))!  {
 											let alert = UIAlertController(title: "Error",
@@ -158,21 +143,7 @@ class LoginViewController: UIViewController {
 											
 											self.present(alert, animated: true, completion: nil)
 											return
-									
-										}else if (passwordField.text == "") || (vpasswordField.text == ""){
-											let alert = UIAlertController(title: "Error",
-											                              message: "Please a enter a password of 8 or more characters and try again",
-											                              preferredStyle: .alert)
-											
-											let okayAction = UIAlertAction(title: "Okay",
-											                               style: .default)
-											
-											alert.addAction(okayAction)
-											
-											self.present(alert, animated: true, completion: nil)
-											return
-
-											
+								
 										}else if (passwordField.text != vpasswordField.text) {
 											let alert = UIAlertController(title: "Error",
 											                              message: "Passwords do not match. Try Again",
