@@ -35,7 +35,6 @@ class ChannelListViewController: UITableViewController {
   }
     
     
-    //aidfadsfasdfahldsfasdfadsfasdfsdfasdfadsfadsfasdfasdf
   
   deinit {
     if let refHandle = channelRefHandle {
