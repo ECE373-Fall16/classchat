@@ -279,14 +279,48 @@ final class ChatViewController: JSQMessagesViewController {
   override func didPressAccessoryButton(_ sender: UIButton) {
     let picker = UIImagePickerController()
     picker.delegate = self
-    if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
-      picker.sourceType = UIImagePickerControllerSourceType.camera
-    } else {
-      picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+    let alert = UIAlertController(title: "Image Source",
+                                  message: "",
+                                  preferredStyle: .alert)
+    
+    let cameraAction = UIAlertAction(title: "Camera",
+                                  style: .default) { action in
+                                    picker.sourceType = UIImagePickerControllerSourceType.camera
+                                    self.present(picker, animated: true, completion:nil)
+    }
+    let photosAction = UIAlertAction(title: "Photos",
+                                  style: .default) { action in
+                                    picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+                                    self.present(picker, animated: true, completion:nil)
+    }
+    let cancelAction = UIAlertAction(title: "Cancel",
+                                  style: .default)
+    
+    
+    
+    alert.addAction(cameraAction)
+    alert.addAction(photosAction)
+    alert.addAction(cancelAction)
+    
+    self.present(alert, animated: true, completion: nil)
+    return
     }
     
-    present(picker, animated: true, completion:nil)
-  }
+    
+    
+    
+
+    //override func didPressAccessoryButton(_ sender: UIButton) {
+    //let picker = UIImagePickerController()
+    //picker.delegate = self
+    //if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
+      //picker.sourceType = UIImagePickerControllerSourceType.camera
+    //} else {
+      //picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+    //}
+    
+    //present(picker, animated: true, completion:nil)
+  //}
   
   private func addMessage(withId id: String, name: String, text: String) {
     if let message = JSQMessage(senderId: id, displayName: name, text: text) {
