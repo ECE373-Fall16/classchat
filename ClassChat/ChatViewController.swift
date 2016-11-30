@@ -10,6 +10,11 @@ import Photos
 import Firebase
 import JSQMessagesViewController
 
+let listOfSwearWords = ["darn", "crap", "newb"]
+
+
+
+
 final class ChatViewController: JSQMessagesViewController {
   
   // MARK: Properties
@@ -128,6 +133,16 @@ final class ChatViewController: JSQMessagesViewController {
       return NSAttributedString(string: senderDisplayName)
     }
   }
+    
+    
+    // Mark: Censoring Messages
+    func containsSwearWord(text: String, swearWords: [String]) -> Bool {
+        return swearWords
+            .reduce(false) { $0 || text.contains($1.lowercased()) }
+    }
+    
+
+    
 
   // MARK: Firebase related methods
   
@@ -220,29 +235,46 @@ final class ChatViewController: JSQMessagesViewController {
       self.scrollToBottom(animated: true)
     }
   }
-  
-  override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-    // 1
-    let itemRef = messageRef.childByAutoId()
     
-    // 2
-    let messageItem = [
-      "senderId": senderId!,
-      "senderName": senderDisplayName!,
-      "text": text!,
-    ]
+
+    override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
+        if (!containsSwearWord(text: text!, swearWords: listOfSwearWords)){
+            let itemRef = messageRef.childByAutoId()
+            
+            // 2
+            let messageItem = [
+                "senderId": senderId!,
+                "senderName": senderDisplayName!,
+                "text": text!,
+                ]
+            
+            // 3
+            itemRef.setValue(messageItem)
+            
+
+            // 4
+            JSQSystemSoundPlayer.jsq_playMessageSentSound()
+            
+            // 5
+            finishSendingMessage()
+            isTyping = false
+
+        }else{
+            let alert = UIAlertController(title: "Error",
+                                          message: "Please abstain from using Foul language",
+                                          preferredStyle: .alert)
+            
+            let okayAction = UIAlertAction(title: "Okay",
+                                           style: .default)
+            
+            alert.addAction(okayAction)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+
+        
+    }
     
-    // 3
-    itemRef.setValue(messageItem)
-    
-    // 4
-    JSQSystemSoundPlayer.jsq_playMessageSentSound()
-    
-    // 5
-    finishSendingMessage()
-    isTyping = false
-  }
-  
   func sendPhotoMessage() -> String? {
     let itemRef = messageRef.childByAutoId()
     
