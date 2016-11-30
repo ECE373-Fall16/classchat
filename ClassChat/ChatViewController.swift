@@ -10,7 +10,7 @@ import Photos
 import Firebase
 import JSQMessagesViewController
 
-let listOfSwearWords = ["darn", "crap", "newb"]
+let pList = ["darn", "crap", "newb"]
 
 
 
@@ -136,8 +136,8 @@ final class ChatViewController: JSQMessagesViewController {
     
     
     // Mark: Censoring Messages
-    func containsSwearWord(text: String, swearWords: [String]) -> Bool {
-        return swearWords
+    func containsProfanity(text: String, Profanity: [String]) -> Bool {
+        return Profanity
             .reduce(false) { $0 || text.contains($1.lowercased()) }
     }
     
@@ -238,7 +238,7 @@ final class ChatViewController: JSQMessagesViewController {
     
 
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        if (!containsSwearWord(text: text!, swearWords: listOfSwearWords)){
+        if (!containsProfanity(text: text!, Profanity: pList)){
             let itemRef = messageRef.childByAutoId()
             
             // 2
@@ -270,7 +270,9 @@ final class ChatViewController: JSQMessagesViewController {
             alert.addAction(okayAction)
             
             self.present(alert, animated: true, completion: nil)
+            return
         }
+        isTyping = false
 
         
     }
