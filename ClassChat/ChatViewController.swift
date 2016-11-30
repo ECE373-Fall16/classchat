@@ -138,7 +138,7 @@ final class ChatViewController: JSQMessagesViewController {
     // Mark: Censoring Messages
     func containsProfanity(text: String, Profanity: [String]) -> Bool {
         return Profanity
-            .reduce(false) { $0 || text.contains($1.lowercased()) }
+            .reduce(false) { $0 || text.lowercased().contains($1.lowercased()) }
     }
     
 

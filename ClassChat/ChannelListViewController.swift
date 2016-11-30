@@ -108,6 +108,7 @@ class ChannelListViewController: UITableViewController {
         
         alert.addAction(okayAction)
         present(alert, animated: true, completion: nil)
+          self.performSegue(withIdentifier: "profile", sender: nil)
     }
   
   // MARK: Firebase related methods
