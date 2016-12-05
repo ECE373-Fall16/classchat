@@ -15,6 +15,7 @@
 		8405D8581DE13AD800E3E296 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 8405D8571DE13AD700E3E296 /* README */; };
 		847BC18D1DD6A08600309EE7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847BC18C1DD6A08600309EE7 /* ProfileViewController.swift */; };
 		84C6909E1DD542F3001EC1F2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6909D1DD542F3001EC1F2 /* Profile.swift */; };
+		84F1B6851DF4E873001DD3DA /* ProfanityFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84F1B6841DF4E873001DD3DA /* ProfanityFile.txt */; };
 		BB53557A1BEF765800321277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5355791BEF765800321277 /* AppDelegate.swift */; };
 		BB53557C1BEF765800321277 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53557B1BEF765800321277 /* LoginViewController.swift */; };
 		BB53557F1BEF765800321277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB53557D1BEF765800321277 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		840980761DCAD78F00CBB232 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		847BC18C1DD6A08600309EE7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		84C6909D1DD542F3001EC1F2 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		84F1B6841DF4E873001DD3DA /* ProfanityFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProfanityFile.txt; sourceTree = "<group>"; };
 		84F2FA451DECDCFB00E85BD3 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 		84F2FA461DECDE1F00E85BD3 /* Backup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backup.swift; sourceTree = "<group>"; };
 		B1EDF78DBA8BB1C872022BD0 /* Pods-ClassChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClassChat/Pods-ClassChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				8405D8571DE13AD700E3E296 /* README */,
+				84F1B6841DF4E873001DD3DA /* ProfanityFile.txt */,
 				BB5355781BEF765800321277 /* ClassChat */,
 				BB5355771BEF765800321277 /* Products */,
 				85DB15776B3ACE41DF631DCF /* Pods */,
@@ -234,6 +237,7 @@
 				45B210371D3B740700DB4827 /* GoogleService-Info.plist in Resources */,
 				BB5355811BEF765800321277 /* Assets.xcassets in Resources */,
 				BB53557F1BEF765800321277 /* Main.storyboard in Resources */,
+				84F1B6851DF4E873001DD3DA /* ProfanityFile.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,10 +368,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = RIC;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -405,9 +408,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = RIC;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

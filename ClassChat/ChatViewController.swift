@@ -10,8 +10,9 @@ import Photos
 import Firebase
 import JSQMessagesViewController
 
-let pList = ["darn", "crap", "newb"]
 
+
+var ProfanityWords = [String]()
 
 
 
@@ -60,11 +61,25 @@ final class ChatViewController: JSQMessagesViewController {
     self.senderId = FIRAuth.auth()?.currentUser?.uid
     observeMessages()
     
+    do {
+        // This solution assumes  you've got the file in your bundle
+        if let path = Bundle.main.path(forResource: "ProfanityFile", ofType: "txt"){
+            let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+            ProfanityWords = data.components(separatedBy: "\r\n")
+        }
+    } catch let err as NSError {
+        print("Error with importing file")
+        print(err)
+    }
+    
+    
     // No avatars
     collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
     collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
-  }
-  
+    }
+    
+
+
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     observeTyping()
@@ -140,6 +155,8 @@ final class ChatViewController: JSQMessagesViewController {
         return Profanity
             .reduce(false) { $0 || text.lowercased().contains($1.lowercased()) }
     }
+    
+    
     
 
     
@@ -238,7 +255,9 @@ final class ChatViewController: JSQMessagesViewController {
     
 
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        if (!containsProfanity(text: text!, Profanity: pList)){
+       dump(ProfanityWords)
+        
+        if (!containsProfanity(text: text!, Profanity: ProfanityWords)){
             let itemRef = messageRef.childByAutoId()
             
             // 2
