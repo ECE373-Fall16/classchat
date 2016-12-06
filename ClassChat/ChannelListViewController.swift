@@ -177,6 +177,8 @@ class ChannelListViewController: UITableViewController {
     if (indexPath as NSIndexPath).section == Section.currentChannelsSection.rawValue {
       let channel = channels[(indexPath as NSIndexPath).row]
       self.performSegue(withIdentifier: "ShowChannel", sender: channel)
+    }else{
+    print("duck")
     }
   }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
