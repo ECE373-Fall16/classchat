@@ -144,7 +144,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cRS-Ja-ufu" id="zqp-en-ts1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeo-f5-FFo">
@@ -184,7 +184,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m4f-vC-RT4" id="mhf-iw-vvI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ytl-yL-dxb">
@@ -203,6 +203,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="udA-kz-mJV"/>
+                    <connections>
+                        <segue destination="Rzg-x9-NFz" kind="show" identifier="viewProfile" id="c6H-8f-8RM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHe-Sh-dDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -225,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTP-1r-Xjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2678" y="388"/>
+            <point key="canvasLocation" x="2713" y="-42"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="emB-h0-MiE">
@@ -250,10 +253,10 @@
             </objects>
             <point key="canvasLocation" x="976" y="389"/>
         </scene>
-        <!--Profile View Conntroller-->
+        <!--Profile View Controller-->
         <scene sceneID="Drv-SE-Jhz">
             <objects>
-                <viewController id="Rzg-x9-NFz" customClass="ProfileViewConntroller" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rzg-x9-NFz" customClass="ProfileViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xwk-jK-QUK"/>
                         <viewControllerLayoutGuide type="bottom" id="DdO-jN-pcJ"/>

@@ -25,3 +25,22 @@ let userEnteredText2 = "This fine didelo thread is a go."
 
 print(containsSwearWord(text: userEnteredText1, swearWords: listOfSwearWords)) // true
 print(containsSwearWord(text: userEnteredText2, swearWords: listOfSwearWords)) // false
+
+
+@IBAction func viewProfile(_ sender: AnyObject){
+    let alert = UIAlertController(title: "Whoops! New Feature Alert",
+                                  message: "Please stay tuned for new updates",
+                                  preferredStyle: .alert)
+    
+    let okayAction = UIAlertAction(title: "Okay, I can't wait",
+                                   style: .default) { _ in
+    }
+    
+    
+    
+    
+    alert.addAction(okayAction)
+    present(alert, animated: true, completion: nil)
+    self.performSegue(withIdentifier: "profile", sender: nil)
+}
+

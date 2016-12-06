@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		459780D31D6465FB007BE66F /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459780D21D6465FB007BE66F /* UIImage+Gif.swift */; };
 		45A0D8FA1D49419500F26729 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0D8F91D49419500F26729 /* ChannelListViewController.swift */; };
 		45A0D8FE1D49508800F26729 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0D8FD1D49508800F26729 /* CreateChannelCell.swift */; };
 		45A0D9011D4BB5E900F26729 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0D9001D4BB5E900F26729 /* Channel.swift */; };
 		45B210371D3B740700DB4827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45B210361D3B740700DB4827 /* GoogleService-Info.plist */; };
 		8405D8581DE13AD800E3E296 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 8405D8571DE13AD700E3E296 /* README */; };
+		844960F91DF60815004B476B /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459780D21D6465FB007BE66F /* UIImage+Gif.swift */; };
 		847BC18D1DD6A08600309EE7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847BC18C1DD6A08600309EE7 /* ProfileViewController.swift */; };
 		84C6909E1DD542F3001EC1F2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6909D1DD542F3001EC1F2 /* Profile.swift */; };
 		84F1B6851DF4E873001DD3DA /* ProfanityFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84F1B6841DF4E873001DD3DA /* ProfanityFile.txt */; };
@@ -299,7 +299,7 @@
 				BB53557C1BEF765800321277 /* LoginViewController.swift in Sources */,
 				84C6909E1DD542F3001EC1F2 /* Profile.swift in Sources */,
 				45A0D9011D4BB5E900F26729 /* Channel.swift in Sources */,
-				459780D31D6465FB007BE66F /* UIImage+Gif.swift in Sources */,
+				844960F91DF60815004B476B /* UIImage+Gif.swift in Sources */,
 				FBEE53041D7B26450004CC1B /* ChatViewController.swift in Sources */,
 				45A0D8FA1D49419500F26729 /* ChannelListViewController.swift in Sources */,
 				847BC18D1DD6A08600309EE7 /* ProfileViewController.swift in Sources */,

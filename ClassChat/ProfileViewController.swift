@@ -10,6 +10,12 @@ import UIKit
 import Photos
 import Firebase
 
-class ProfileViewConntroller: UITableViewController {
+class ProfileViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Profile"
+    }
+
 }
 

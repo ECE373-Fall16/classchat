@@ -93,24 +93,18 @@ class ChannelListViewController: UITableViewController {
     }
     
     
-    
-    @IBAction func viewProfile(_ sender: AnyObject){
-        let alert = UIAlertController(title: "Whoops! New Feature Alert",
-                                      message: "Please stay tuned for new updates",
-                                      preferredStyle: .alert)
-        
-        let okayAction = UIAlertAction(title: "Okay, I can't wait",
-                                         style: .default) { _ in
-                                            }
+    @IBAction func viewProfile(_ sender: AnyObject) {
+        performSegue(withIdentifier: "viewProfile", sender: self)
         
         
         
         
-        alert.addAction(okayAction)
-        present(alert, animated: true, completion: nil)
-          self.performSegue(withIdentifier: "profile", sender: nil)
+        
+        
+        
     }
-  
+
+    
   // MARK: Firebase related methods
 
   private func observeChannels() {
@@ -185,15 +179,15 @@ class ChannelListViewController: UITableViewController {
       self.performSegue(withIdentifier: "ShowChannel", sender: channel)
     }
   }
-    //override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    //    if editingStyle == .delete {
-    //        channels.remove(at: indexPath.row)
-    //        tableView.deleteRows(at: [indexPath], with: .fade)
-    //        }
-    //}
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            channels.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+    }
     
     @IBAction func signoutButtonPressed(_ sender: AnyObject) {
-        let alert = UIAlertController(title: "Are you sure you want to log out",
+        let alert = UIAlertController(title: "Are you sure you want to log out?",
                                       message: "",
                                       preferredStyle: .alert)
         
