@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
 		                              message: "Please Register",
 		                              preferredStyle: .alert)
 		
-		let saveAction = UIAlertAction(title: "Save",
+		let saveAction = UIAlertAction(title: "Register",
 		                               style: .default) { action in
 										let FnameField = alert.textFields![0]
 										let emailField = alert.textFields![1]
