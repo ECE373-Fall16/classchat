@@ -296,13 +296,56 @@
                                     <action selector="agreePressed:" destination="xvG-b0-Jdd" eventType="touchUpInside" id="xOa-1i-KV1"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFs-PA-Z7r">
+                                <rect key="frame" x="0.0" y="123" width="375" height="431"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <mutableString key="text">Class chat is an application made for students and academic purposes. Please read the terms and conditions carefully.
+
+Terms and conditions of usage
+Misuse of the application for any purpose other than academic discussions will result in discontinuation of the user account.
+
+Code of conduct:
+You agree not to:
+1. Abuse, harrass, stalk other users.These actions violate legal rights of others and will not be tolerated.                            
+2. Promote, sell or offer any commercial services.
+3. Write hateful messages about Professors, other students or other members of the society in chat groups. These chat groups are made for academic and learning purposes. Negativity and hate of any form will not be tolerated.
+4. Create a false identity for the purpose of misleading other members.
+5. Collect information about others without their consent and misuse it.
+6. Using someone else's email address as yours to create an account.
+</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05z-Nc-BCn">
+                                <rect key="frame" x="66" y="66" width="243" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhw-6k-knh">
+                                <rect key="frame" x="127" y="35" width="121" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1461717441" green="0.42831145910000001" blue="0.87144315240000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="05z-Nc-BCn" firstAttribute="top" secondItem="9Ow-lH-E2T" secondAttribute="top" constant="66" id="3fw-uc-nJJ"/>
+                            <constraint firstItem="0xg-vx-DFF" firstAttribute="top" secondItem="vFs-PA-Z7r" secondAttribute="bottom" constant="113" id="4SB-Fa-ZLD"/>
                             <constraint firstAttribute="bottom" secondItem="NtE-rU-8NS" secondAttribute="bottom" constant="20" symbolic="YES" id="4m9-8k-krz"/>
+                            <constraint firstItem="vFs-PA-Z7r" firstAttribute="leading" secondItem="9Ow-lH-E2T" secondAttribute="leading" id="NKY-s0-gq9"/>
+                            <constraint firstItem="vFs-PA-Z7r" firstAttribute="top" secondItem="05z-Nc-BCn" secondAttribute="bottom" constant="27" id="SUL-23-Pn7"/>
+                            <constraint firstItem="05z-Nc-BCn" firstAttribute="centerX" secondItem="vFs-PA-Z7r" secondAttribute="centerX" id="VPz-s2-FP6"/>
+                            <constraint firstItem="05z-Nc-BCn" firstAttribute="top" secondItem="uhw-6k-knh" secondAttribute="bottom" constant="1" id="bHE-zN-lWm"/>
                             <constraint firstItem="0xg-vx-DFF" firstAttribute="top" secondItem="7V4-Yn-lWd" secondAttribute="bottom" constant="59" id="dZ4-p8-QLI"/>
                             <constraint firstItem="7V4-Yn-lWd" firstAttribute="centerX" secondItem="9Ow-lH-E2T" secondAttribute="centerX" id="wLw-d7-pVm"/>
                             <constraint firstItem="7V4-Yn-lWd" firstAttribute="centerX" secondItem="NtE-rU-8NS" secondAttribute="centerX" id="xcn-CL-0lK"/>
+                            <constraint firstItem="uhw-6k-knh" firstAttribute="centerX" secondItem="9Ow-lH-E2T" secondAttribute="centerX" id="yOq-Js-ASY"/>
+                            <constraint firstItem="05z-Nc-BCn" firstAttribute="centerX" secondItem="9Ow-lH-E2T" secondAttribute="centerX" id="zbM-Vr-JSE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -311,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SmW-n7-DEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-198" y="385"/>
+            <point key="canvasLocation" x="-199.19999999999999" y="384.55772113943033"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Drv-SE-Jhz">
