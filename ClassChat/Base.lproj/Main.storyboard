@@ -97,7 +97,8 @@
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.22004194557666779" green="0.47059157490730286" blue="0.87144315242767334" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1464153528213501" green="0.42682346701622009" blue="0.87155991792678833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Su1-wR-TsO" firstAttribute="leading" secondItem="5Ud-se-jh6" secondAttribute="leading" id="0BM-rf-Br3"/>
                             <constraint firstItem="edD-sW-bvM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Wj-DK-xEP"/>
@@ -320,8 +321,8 @@ You agree not to:
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05z-Nc-BCn">
-                                <rect key="frame" x="66" y="66" width="243" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="65.5" y="66" width="244.5" height="30"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -332,7 +333,7 @@ You agree not to:
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1461717441" green="0.42831145910000001" blue="0.87144315240000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1464153528213501" green="0.42682346701622009" blue="0.87155991792678833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="05z-Nc-BCn" firstAttribute="top" secondItem="9Ow-lH-E2T" secondAttribute="top" constant="66" id="3fw-uc-nJJ"/>
                             <constraint firstItem="0xg-vx-DFF" firstAttribute="top" secondItem="vFs-PA-Z7r" secondAttribute="bottom" constant="113" id="4SB-Fa-ZLD"/>
