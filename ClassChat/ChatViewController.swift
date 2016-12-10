@@ -255,7 +255,6 @@ final class ChatViewController: JSQMessagesViewController {
     
 
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-       dump(ProfanityWords)
         
         if (!containsProfanity(text: text!, Profanity: ProfanityWords)){
             let itemRef = messageRef.childByAutoId()
@@ -438,4 +437,6 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     picker.dismiss(animated: true, completion:nil)
 }
+
+
 
