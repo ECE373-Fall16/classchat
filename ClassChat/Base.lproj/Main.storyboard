@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xvG-b0-Jdd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -124,12 +124,12 @@
                         <outlet property="bottomLayoutGuideConstraint" destination="MVT-E5-fDK" id="bNU-sI-B85"/>
                         <outlet property="emailField" destination="5Ud-se-jh6" id="PGQ-7w-ko9"/>
                         <outlet property="passwordField" destination="Su1-wR-TsO" id="UjV-4O-hFA"/>
-                        <segue destination="8CN-Ua-xvG" kind="presentation" identifier="LoginToChat" id="C1q-pb-YWz"/>
+                        <segue destination="8CN-Ua-xvG" kind="presentation" identifier="LoginToChat" id="akn-5O-osW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304.80000000000001" y="388.15592203898052"/>
+            <point key="canvasLocation" x="566" y="387"/>
         </scene>
         <!--Channel List View Controller-->
         <scene sceneID="bg1-OT-nd2">
@@ -220,7 +220,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHe-Sh-dDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821.5999999999999" y="388.15592203898052"/>
+            <point key="canvasLocation" x="2578" y="387"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="fNE-JP-QV9">
@@ -262,7 +262,56 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIN-tW-H0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976" y="389"/>
+            <point key="canvasLocation" x="1654" y="386"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Dq3-hl-zHI">
+            <objects>
+                <viewController id="xvG-b0-Jdd" customClass="TOCViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2gY-Uc-UjE"/>
+                        <viewControllerLayoutGuide type="bottom" id="0xg-vx-DFF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Ow-lH-E2T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtE-rU-8NS">
+                                <rect key="frame" x="122" y="601" width="130" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="DISAGREE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="disagreePressed:" destination="xvG-b0-Jdd" eventType="touchUpInside" id="Bts-On-Pis"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V4-Yn-lWd">
+                                <rect key="frame" x="144" y="562" width="87" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="AGREE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="agreePressed:" destination="xvG-b0-Jdd" eventType="touchUpInside" id="xOa-1i-KV1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1461717441" green="0.42831145910000001" blue="0.87144315240000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="NtE-rU-8NS" secondAttribute="bottom" constant="20" symbolic="YES" id="4m9-8k-krz"/>
+                            <constraint firstItem="0xg-vx-DFF" firstAttribute="top" secondItem="7V4-Yn-lWd" secondAttribute="bottom" constant="59" id="dZ4-p8-QLI"/>
+                            <constraint firstItem="7V4-Yn-lWd" firstAttribute="centerX" secondItem="9Ow-lH-E2T" secondAttribute="centerX" id="wLw-d7-pVm"/>
+                            <constraint firstItem="7V4-Yn-lWd" firstAttribute="centerX" secondItem="NtE-rU-8NS" secondAttribute="centerX" id="xcn-CL-0lK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showLogin" id="7bD-Gf-Gik"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SmW-n7-DEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-198" y="385"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Drv-SE-Jhz">
