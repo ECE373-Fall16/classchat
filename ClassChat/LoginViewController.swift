@@ -52,6 +52,10 @@ class LoginViewController: UIViewController {
 
             return
 			}
+			FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
+
+				
+			}
             self.performSegue(withIdentifier: "LoginToChat", sender: nil)
         }
 	}else{

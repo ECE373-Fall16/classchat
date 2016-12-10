@@ -9,12 +9,23 @@
 import UIKit
 import Firebase
 
+
+
+
+
 enum Section: Int {
   case createNewChannelSection = 0
   case currentChannelsSection
 }
 
 class ChannelListViewController: UITableViewController {
+    let usersRef = FIRDatabase.database().reference(withPath: "online")
+    
+    
+    var userCountBarButtonItem: UIBarButtonItem!
+    var user: User!
+    
+    let listToUsers = "ListToUsers"
 
   // MARK: Properties
   var senderDisplayName: String?
@@ -32,7 +43,53 @@ class ChannelListViewController: UITableViewController {
     super.viewDidLoad()
     title = "Welcome to Class Chat"
     observeChannels()
-  }
+
+    
+    userCountBarButtonItem = UIBarButtonItem(title: "1",
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(userCountButtonDidTouch))
+    userCountBarButtonItem.tintColor = UIColor.white
+    navigationItem.leftBarButtonItem = userCountBarButtonItem
+    
+    
+    FIRAuth.auth()!.addStateDidChangeListener { auth, user in
+        guard let user = user else { return }
+        self.user = User(authData: user)
+        // 1
+        let currentUserRef = self.usersRef.child(self.user.uid)
+        // 2
+        currentUserRef.setValue(self.user.email)
+        // 3
+        currentUserRef.onDisconnectRemoveValue()
+    }
+    usersRef.observe(.value, with: { snapshot in
+        if snapshot.exists() {
+            self.userCountBarButtonItem?.title = snapshot.childrenCount.description
+        } else {
+            self.userCountBarButtonItem?.title = "0"
+        }
+    })
+
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
   
@@ -43,6 +100,12 @@ class ChannelListViewController: UITableViewController {
   }
   
   // MARK :Actions
+    
+    
+    func userCountButtonDidTouch() {
+        performSegue(withIdentifier: "onlineUsers", sender: nil)
+    }
+
     
     
   
@@ -95,13 +158,7 @@ class ChannelListViewController: UITableViewController {
     
     @IBAction func viewProfile(_ sender: AnyObject) {
         performSegue(withIdentifier: "viewProfile", sender: self)
-        
-        
-        
-        
-        
-        
-        
+   
     }
 
     
