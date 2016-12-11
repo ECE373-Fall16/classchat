@@ -12,6 +12,40 @@ import Firebase
 
 
 class RegisterViewController: UIViewController {
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var verifypasswordField: UITextField!
+    @IBOutlet weak var majorField: UITextField!
+
+    
+    @IBAction func registerDidTouch(_ sender: AnyObject) {
+        performSegue(withIdentifier: "BackToLogin", sender: self)
+    }
+    
+    @IBAction func cancelDidTouch(_ sender: AnyObject) {
+        performSegue(withIdentifier: "BackToLogin", sender: self)
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

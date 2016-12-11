@@ -12,6 +12,44 @@ import Firebase
 
 
 class ForgotViewController: UIViewController {
+    @IBOutlet weak var emailField: UITextField!
+
+    
+    
+    @IBAction func resetDidTouch(_ sender: AnyObject) {
+        performSegue(withIdentifier: "ToLoginf", sender: self)
+    }
+    
+    @IBAction func cancelDidTouch(_ sender: AnyObject) {
+        performSegue(withIdentifier: "ToLoginf", sender: self)
+    }
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

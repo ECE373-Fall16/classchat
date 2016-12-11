@@ -137,13 +137,6 @@ class LoginViewController: UIViewController {
 		let channelVc = navVc.viewControllers.first as! ChannelListViewController
 		
 		channelVc.senderDisplayName = emailField?.text
-		
-	}else if registerPressed {
-		
-	}else if forgotPressed{
-		
-	}else if TOCPressed{
-		
 	}else{
 		
 	}
