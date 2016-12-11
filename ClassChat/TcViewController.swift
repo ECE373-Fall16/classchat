@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 
 
-class TOCViewController: UIViewController {
+class TcViewController: UIViewController {
     
     
     @IBAction func disagreePressed(_ sender: AnyObject) {

@@ -48,9 +48,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdo-eJ-hoI">
-                                <rect key="frame" x="78" y="550" width="219" height="50"/>
+                                <rect key="frame" x="78" y="550" width="219" height="39"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="h6N-pM-EyI"/>
+                                    <constraint firstAttribute="height" constant="39" id="h6N-pM-EyI"/>
                                     <constraint firstAttribute="width" constant="219" id="rFJ-ff-8mj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
@@ -58,14 +58,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUpDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ShA-I4-URO"/>
+                                    <action selector="registerDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DLj-2g-FyP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRq-d9-tFG">
-                                <rect key="frame" x="78" y="583" width="219" height="50"/>
+                                <rect key="frame" x="78" y="578" width="219" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="219" id="6za-LO-LgD"/>
-                                    <constraint firstAttribute="height" constant="50" id="C9F-GC-T7t"/>
+                                    <constraint firstAttribute="height" constant="41" id="C9F-GC-T7t"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,6 +96,21 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be0-yk-Bbt">
+                                <rect key="frame" x="78" y="603" width="219" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="219" id="8j1-qs-xmL"/>
+                                    <constraint firstAttribute="height" constant="44" id="qJF-1Q-req"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="View Terms and Conditions">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="TOCDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bIh-m6-CqZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1464153528213501" green="0.42682346701622009" blue="0.87155991792678833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,11 +119,13 @@
                             <constraint firstItem="edD-sW-bvM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Wj-DK-xEP"/>
                             <constraint firstItem="Wdo-eJ-hoI" firstAttribute="top" secondItem="JIn-ew-tdp" secondAttribute="bottom" constant="8" symbolic="YES" id="2hy-Iu-lMY"/>
                             <constraint firstItem="JIn-ew-tdp" firstAttribute="centerX" secondItem="edD-sW-bvM" secondAttribute="centerX" id="3XE-ia-KTX"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hRq-d9-tFG" secondAttribute="bottom" constant="34" id="JBh-cE-UOL"/>
+                            <constraint firstItem="Be0-yk-Bbt" firstAttribute="leading" secondItem="hRq-d9-tFG" secondAttribute="leading" id="6LS-Rk-pTY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hRq-d9-tFG" secondAttribute="bottom" constant="48" id="JBh-cE-UOL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JIn-ew-tdp" secondAttribute="bottom" constant="125" id="MVT-E5-fDK"/>
                             <constraint firstItem="Su1-wR-TsO" firstAttribute="width" secondItem="JIn-ew-tdp" secondAttribute="width" id="RQr-FD-gVF"/>
                             <constraint firstItem="5Ud-se-jh6" firstAttribute="width" secondItem="JIn-ew-tdp" secondAttribute="width" id="SDd-q4-RhE"/>
                             <constraint firstItem="JIn-ew-tdp" firstAttribute="top" secondItem="5Ud-se-jh6" secondAttribute="bottom" constant="66" id="dqh-Ve-JSn"/>
+                            <constraint firstAttribute="bottom" secondItem="Be0-yk-Bbt" secondAttribute="bottom" constant="20" symbolic="YES" id="eMj-5l-fUK"/>
                             <constraint firstItem="5Ud-se-jh6" firstAttribute="centerX" secondItem="JIn-ew-tdp" secondAttribute="centerX" id="gWG-G7-Ru6"/>
                             <constraint firstItem="hRq-d9-tFG" firstAttribute="leading" secondItem="Wdo-eJ-hoI" secondAttribute="leading" id="h3A-U1-dMD"/>
                             <constraint firstItem="5Ud-se-jh6" firstAttribute="height" secondItem="JIn-ew-tdp" secondAttribute="height" id="jsi-zy-gKf"/>
@@ -116,7 +133,7 @@
                             <constraint firstItem="Su1-wR-TsO" firstAttribute="centerX" secondItem="JIn-ew-tdp" secondAttribute="centerX" id="mOc-yh-pRX"/>
                             <constraint firstItem="edD-sW-bvM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="n42-t5-tXn"/>
                             <constraint firstItem="edD-sW-bvM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="oKh-Xq-L1k"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wdo-eJ-hoI" secondAttribute="bottom" constant="67" id="xOY-O5-Cvb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wdo-eJ-hoI" secondAttribute="bottom" constant="78" id="xOY-O5-Cvb"/>
                             <constraint firstItem="hRq-d9-tFG" firstAttribute="leading" secondItem="JIn-ew-tdp" secondAttribute="leading" id="y7S-vu-In2"/>
                             <constraint firstItem="Su1-wR-TsO" firstAttribute="height" secondItem="JIn-ew-tdp" secondAttribute="height" id="zmt-cn-RMs"/>
                         </constraints>
@@ -126,11 +143,35 @@
                         <outlet property="emailField" destination="5Ud-se-jh6" id="PGQ-7w-ko9"/>
                         <outlet property="passwordField" destination="Su1-wR-TsO" id="UjV-4O-hFA"/>
                         <segue destination="8CN-Ua-xvG" kind="presentation" identifier="LoginToChat" id="akn-5O-osW"/>
+                        <segue destination="fga-c4-o1N" kind="presentation" identifier="ToRegister" id="nnh-ae-hQq"/>
+                        <segue destination="Yo5-0P-OET" kind="presentation" identifier="ToForgot" id="ay1-30-gS6"/>
+                        <segue destination="xvG-b0-Jdd" kind="presentation" identifier="ToTOC" modalTransitionStyle="crossDissolve" id="u4R-WZ-hBf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="387"/>
+            <point key="canvasLocation" x="565.60000000000002" y="386.35682158920542"/>
+        </scene>
+        <!--Forgot View Controller-->
+        <scene sceneID="Fyw-I9-EzO">
+            <objects>
+                <viewController id="Yo5-0P-OET" customClass="ForgotViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2bF-Dd-laT"/>
+                        <viewControllerLayoutGuide type="bottom" id="8ut-jr-2KN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jm8-iU-G5M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1461717441" green="0.42831145910000001" blue="0.87144315240000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="ToLoginf" id="0NK-Cm-f3P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bwb-Pp-emV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1527" y="-373"/>
         </scene>
         <!--Channel List View Controller-->
         <scene sceneID="bg1-OT-nd2">
@@ -221,7 +262,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHe-Sh-dDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2578" y="387"/>
+            <point key="canvasLocation" x="4598" y="-46"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="fNE-JP-QV9">
@@ -240,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTP-1r-Xjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3692" y="-333"/>
+            <point key="canvasLocation" x="5454" y="-878"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="emB-h0-MiE">
@@ -263,12 +304,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIN-tW-H0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1654" y="386"/>
+            <point key="canvasLocation" x="3718" y="-46"/>
         </scene>
-        <!--View Controller-->
+        <!--Tc View Controller-->
         <scene sceneID="Dq3-hl-zHI">
             <objects>
-                <viewController id="xvG-b0-Jdd" customClass="TOCViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xvG-b0-Jdd" customClass="TcViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2gY-Uc-UjE"/>
                         <viewControllerLayoutGuide type="bottom" id="0xg-vx-DFF"/>
@@ -302,7 +343,7 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
-                                <mutableString key="text">Class chat is an application made for students and academic purposes. Please read the terms and conditions carefully.
+                                <string key="text">Class chat is an application made for students and academic purposes. Please read the terms and conditions carefully.
 
 Terms and conditions of usage
 Misuse of the application for any purpose other than academic discussions will result in discontinuation of the user account.
@@ -315,7 +356,7 @@ You agree not to:
 4. Create a false identity for the purpose of misleading other members.
 5. Collect information about others without their consent and misuse it.
 6. Using someone else's email address as yours to create an account.
-</mutableString>
+</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -374,7 +415,7 @@ You agree not to:
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFE-sl-6pj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3692" y="388"/>
+            <point key="canvasLocation" x="5454" y="-46"/>
         </scene>
         <!--Online Users View Controller-->
         <scene sceneID="Ri9-hs-mjw">
@@ -412,7 +453,32 @@ You agree not to:
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8JD-HT-9we" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3692" y="1183"/>
+            <point key="canvasLocation" x="5454" y="723"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="enC-bs-Qg5">
+            <objects>
+                <viewController id="fga-c4-o1N" customClass="RegisterViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BK3-qv-8oc"/>
+                        <viewControllerLayoutGuide type="bottom" id="JoE-q7-s3c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b3v-hb-Z5R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1461717441" green="0.42831145910000001" blue="0.87144315240000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bB7-pC-6Ue"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="ToLogin" id="LrE-vI-KEv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bY-bV-Ojf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1575" y="1191"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0NK-Cm-f3P"/>
+    </inferredMetricsTieBreakers>
 </document>

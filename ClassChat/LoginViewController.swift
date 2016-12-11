@@ -9,6 +9,10 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
+	var loginPressed = false
+	var registerPressed = false
+	var forgotPressed = false
+	var TOCPressed = false
 	
 	
 	let loginToList = "LoginToList"
@@ -34,7 +38,11 @@ class LoginViewController: UIViewController {
   
 
   @IBAction func loginDidTouch(_ sender: AnyObject) {
-	let umasscheck = emailField.text
+	 loginPressed = true
+	 registerPressed = false
+	 forgotPressed = false
+	TOCPressed = false
+		let umasscheck = emailField.text
     if ((emailField?.text != "") && (passwordField?.text != "") && (umasscheck?.hasSuffix("umass.edu"))!) || emailField?.text == "alexj2space@gmail.com" {
         FIRAuth.auth()!.signIn(withEmail: emailField.text!, password: passwordField.text!){ (user, error) in
         if let err: Error = error {
@@ -73,221 +81,31 @@ class LoginViewController: UIViewController {
 	}
     }
 	
+	@IBAction func registerDidTouch(_ sender: AnyObject) {
+		loginPressed = false
+		registerPressed = true
+		forgotPressed = false
+		TOCPressed = false
+		performSegue(withIdentifier: "ToRegister", sender: self)
+	}
 	
-	@IBAction func signUpDidTouch(_ sender: AnyObject) {
-		let alert = UIAlertController(title: "Register!",
-		                              message: "Please Register",
-		                              preferredStyle: .alert)
-		
-		let saveAction = UIAlertAction(title: "Register",
-		                               style: .default) { action in
-										let FnameField = alert.textFields![0]
-										let emailField = alert.textFields![1]
-										let passwordField = alert.textFields![2]
-										let vpasswordField = alert.textFields![3]
-										let umassemail = emailField.text
-										
-										
-										if (umassemail?.hasSuffix("umass.edu"))! && (FnameField.text != "") && (emailField.text != "") && (passwordField.text != "") && (passwordField.text == vpasswordField.text) {
-											
-											
-											FIRAuth.auth()!.createUser(withEmail: emailField.text!, password: passwordField.text!) { user, error in
-												if let err: Error = error {
-													print(err.localizedDescription)
-													let alert = UIAlertController(title: "Error",
-													                              message: err.localizedDescription,
-													                              preferredStyle: .alert)
-													
-													let okayAction = UIAlertAction(title: "Okay",
-													                               style: .default)
-													
-													alert.addAction(okayAction)
-													
-													self.present(alert, animated: true, completion: nil)
-													return
-												}else{
-													
-													FIRAuth.auth()!.signIn(withEmail: self.emailField.text!, password: self.passwordField.text!)
-													let user = FIRAuth.auth()?.currentUser
-													user?.sendEmailVerification()
-													let alert = UIAlertController(title: "Success!",
-													                              message: "A verification email was sent and your profile was created",
-													                              preferredStyle: .alert)
-													
-													let okayAction = UIAlertAction(title: "Okay",
-													                               style: .default)
-													
-													alert.addAction(okayAction)
-													
-													self.present(alert, animated: true, completion: nil)
-												}
-											}
-										}else if ((FnameField.text == "") || (emailField.text == "") || (passwordField.text == "") || (vpasswordField.text == "")){
-											let alert = UIAlertController(title: "Error",
-											                              message: "Please Fill in all Fields and try again",
-											                              preferredStyle: .alert)
-											
-											let okayAction = UIAlertAction(title: "Okay",
-											                               style: .default)
-											
-											alert.addAction(okayAction)
-											
-											self.present(alert, animated: true, completion: nil)
-											return
-											
-										}else if !(umassemail?.hasSuffix("umass.edu"))!  {
-											let alert = UIAlertController(title: "Error",
-											                              message: "The email entered is not a valid UMass email address. Try again",
-											                              preferredStyle: .alert)
-											
-											let okayAction = UIAlertAction(title: "Okay",
-											                               style: .default)
-											
-											alert.addAction(okayAction)
-											
-											self.present(alert, animated: true, completion: nil)
-											return
-								
-										}else if (passwordField.text != vpasswordField.text) {
-											let alert = UIAlertController(title: "Error",
-											                              message: "Passwords do not match. Try Again",
-											                              preferredStyle: .alert)
-											
-											let okayAction = UIAlertAction(title: "Okay",
-											                               style: .default)
-											
-											alert.addAction(okayAction)
-											
-											self.present(alert, animated: true, completion: nil)
-											return
-
-											
-										}else{
-											let alert = UIAlertController(title: "FATAL",
-											                              message: "UNKOWN ERROR",
-											                              preferredStyle: .alert)
-											
-											let okayAction = UIAlertAction(title: "Okay",
-											                               style: .default)
-											
-											alert.addAction(okayAction)
-											
-											self.present(alert, animated: true, completion: nil)
-											return
-										}
-		}
-		
-		
-		
-		let cancelAction = UIAlertAction(title: "Cancel",
-		                                 style: .default)
-		alert.addTextField { textFName in
-			textFName.placeholder = " Enter your First & Last name"
-		}
-		
-		alert.addTextField { textEmail in
-			textEmail.keyboardType = UIKeyboardType.emailAddress
-			textEmail.placeholder = "Enter your UMass email "
-		}
-		
-		alert.addTextField { textPassword in
-			textPassword.isSecureTextEntry = true
-			textPassword.placeholder = "Enter your password"
-		}
-		alert.addTextField { textPassword in
-			textPassword.isSecureTextEntry = true
-			textPassword.placeholder = "Verify your password"
-		}
-		
-		
-		alert.addAction(saveAction)
-		alert.addAction(cancelAction)
-		
-		present(alert, animated: true, completion: nil)
+    @IBAction func forgotDidTouch(_ sender: AnyObject){
+		loginPressed = false
+		registerPressed = false
+		forgotPressed = true
+		TOCPressed = false
+		performSegue(withIdentifier: "ToForgot", sender: self)
+    }
+	
+	@IBAction func TOCDidTouch(_ sender: AnyObject) {
+		loginPressed = false
+		registerPressed = false
+		forgotPressed = false
+		TOCPressed = true
+		performSegue(withIdentifier: "ToTOC", sender: self)
 	}
 	
 
-    @IBAction func forgotDidTouch(_ sender: AnyObject){
-        let alert = UIAlertController(title: "Forgot?",
-                                      message: "Please enter your email address",
-                                      preferredStyle: .alert)
-		
-        let resetAction = UIAlertAction(title: "Reset",
-                                        style: .default) { action in
-                                            let emailField = alert.textFields![0]
-											let umassemail = emailField.text
-											if (emailField.text != "") && (umassemail?.hasSuffix("umass.edu"))!{
-												FIRAuth.auth()?.sendPasswordReset(withEmail: emailField.text!) { error in
-													if let err: Error = error {
-														print(err.localizedDescription)
-														let alert = UIAlertController(title: "Error",
-														                              message: err.localizedDescription,
-														                              preferredStyle: .alert)
-														
-														let okayAction = UIAlertAction(title: "Okay",
-														                               style: .default)
-														
-														alert.addAction(okayAction)
-														
-														self.present(alert, animated: true, completion: nil)
-														return
-
-													}
-													let alert = UIAlertController(title: "Success!",
-													                              message: "A reset email was sent ",
-													                              preferredStyle: .alert)
-													
-													let okayAction = UIAlertAction(title: "Okay",
-													                               style: .default)
-													
-													alert.addAction(okayAction)
-													
-													self.present(alert, animated: true, completion: nil)
-												}
-												
-											}else{
-												let alert = UIAlertController(title: "Error",
-												                              message: "Please enter valid UMass email address and try again",
-												                              preferredStyle: .alert)
-												
-												let okayAction = UIAlertAction(title: "Okay",
-												                               style: .default)
-												
-												alert.addAction(okayAction)
-												
-												self.present(alert, animated: true, completion: nil)
-												
-											}
-        }
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .default)
-        
-        
-        alert.addTextField { textEmail in
-			textEmail.keyboardType = UIKeyboardType.emailAddress
-            textEmail.placeholder = "Enter your email"
-        }
-      
-        
-        alert.addAction(resetAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)
-        
-    }
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	
@@ -314,14 +132,26 @@ class LoginViewController: UIViewController {
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
-    let navVc = segue.destination as! UINavigationController
-    let channelVc = navVc.viewControllers.first as! ChannelListViewController
-    
-    channelVc.senderDisplayName = emailField?.text
+	if loginPressed {
+		let navVc = segue.destination as! UINavigationController
+		let channelVc = navVc.viewControllers.first as! ChannelListViewController
+		
+		channelVc.senderDisplayName = emailField?.text
+		
+	}else if registerPressed {
+		
+	}else if forgotPressed{
+		
+	}else if TOCPressed{
+		
+	}else{
+		
+	}
+	
   }
   
   // MARK: - Notifications
-  
+	
   func keyboardWillShowNotification(_ notification: Notification) {
     let keyboardEndFrame = ((notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
     let convertedKeyboardEndFrame = view.convert(keyboardEndFrame, from: view.window)
