@@ -143,7 +143,7 @@ class LoginViewController: UIViewController {
 	
   }
   
-  // MARK: - Notifications
+  // MARK: - Notificat.ions
 	
   func keyboardWillShowNotification(_ notification: Notification) {
     let keyboardEndFrame = ((notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
