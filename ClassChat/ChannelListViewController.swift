@@ -20,7 +20,7 @@ enum Section: Int {
 
 class ChannelListViewController: UITableViewController {
     let usersRef = FIRDatabase.database().reference(withPath: "online")
-    
+    var ProfanityWords = [String]()
     
     var userCountBarButtonItem: UIBarButtonItem!
     var user: User!
@@ -71,25 +71,28 @@ class ChannelListViewController: UITableViewController {
         }
     })
 
-    
+    do {
+        // This solution assumes  you've got the file in your bundle
+        if let path = Bundle.main.path(forResource: "ProfanityFile", ofType: "txt"){
+            let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+            ProfanityWords = data.components(separatedBy: "\r\n")
+        }
+    } catch let err as NSError {
+        print("Error with importing file")
+        print(err)
+    }
+
     
     }
     
     
+    func containsProfanity(text: String, Profanity: [String]) -> Bool {
+        return Profanity
+            .reduce(false) { $0 || text.lowercased().contains($1.lowercased()) }
+    }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
   
@@ -131,6 +134,20 @@ class ChannelListViewController: UITableViewController {
                                         
                                             alert.addAction(okayAction)
                                             self.present(alert, animated: true, completion: nil)
+                                            
+                                        }else if(self.containsProfanity(text: classField.text!, Profanity: self.ProfanityWords)){
+                                            let alert = UIAlertController(title: "No Profanity",
+                                                                          message: "",
+                                                                          preferredStyle: .alert)
+                                            
+                                            let okayAction = UIAlertAction(title: "Okay",
+                                                                           style: .default) { _ in
+                                            }
+                                            
+                                            
+                                            alert.addAction(okayAction)
+                                            self.present(alert, animated: true, completion: nil)
+
                                             
                                         }else{
                                             self.channelsstring.append(classField.text!)
