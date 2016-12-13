@@ -12,25 +12,25 @@ import Foundation
 class TcViewController: UIViewController {
     
     
-    @IBAction func disagreePressed(_ sender: AnyObject) {
-        let alert = UIAlertController(title: "Are you sure?",
-                                      message: "The app will quit",
-                                      preferredStyle: .alert)
-        
-        let yesAction = UIAlertAction(title: "Yes",
-                                      style: .default) { action in
-                                        exit(0)
-        }
-        let noAction = UIAlertAction(title: "No",
-                                     style: .default)
-        
-        
-        alert.addAction(yesAction)
-        alert.addAction(noAction)
-        
-        self.present(alert, animated: true, completion: nil)
-        return
-    }
+//    @IBAction func disagreePressed(_ sender: AnyObject) {
+//        let alert = UIAlertController(title: "Are you sure?",
+//                                      message: "The app will quit",
+//                                      preferredStyle: .alert)
+//
+//        let yesAction = UIAlertAction(title: "Yes",
+//                                      style: .default) { action in
+//                                        exit(0)
+//        }
+//        let noAction = UIAlertAction(title: "No",
+//                                     style: .default)
+//
+//
+//        alert.addAction(yesAction)
+//        alert.addAction(noAction)
+//
+//        self.present(alert, animated: true, completion: nil)
+//        return
+//    }
     
     @IBAction func agreePressed(_ sender: AnyObject) {
         let alert = UIAlertController(title: "Have you read and understood the Terms",

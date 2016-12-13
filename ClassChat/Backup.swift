@@ -237,3 +237,30 @@
 
    
    }
+   
+   
+   
+   var ProfanityWords = [String]()
+   
+   do {
+    // This solution assumes  you've got the file in your bundle
+    if let path = Bundle.main.path(forResource: "ProfanityFile", ofType: "txt"){
+        let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+        ProfanityWords = data.components(separatedBy: "\r\n")
+    }
+   } catch let err as NSError {
+    print("Error with importing file")
+    print(err)
+   }
+
+
+   
+   func containsProfanity(text: String, Profanity: [String]) -> Bool {
+    return Profanity
+        .reduce(false) { $0 || text.lowercased().contains($1.lowercased()) }
+   }
+   
+   if (!containsProfanity(text: text!, Profanity: ProfanityWords)){
+    let itemRef = messageRef.childByAutoId()
+   
+   

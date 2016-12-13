@@ -4,7 +4,9 @@
 Time
 Apple ID registered with free level of Apple Developer
 MacOS with admin priveledges
-Xcode
+Xcode 8.1
+Swift 3
+Cocoa Pods
 Apple Device => iphone 5
 
 ************HOW-TO***************
@@ -17,6 +19,7 @@ Apple Device => iphone 5
     A. Go to terminal and run the following commands
         cd ~/path/to/downloaded/files
         pod install
+4. 
 
 
 

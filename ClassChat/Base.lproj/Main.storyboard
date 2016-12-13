@@ -256,21 +256,29 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cRS-Ja-ufu" id="zqp-en-ts1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4se-cC-KMb">
-                                            <rect key="frame" x="282" y="4" width="60" height="36"/>
+                                            <rect key="frame" x="307" y="4" width="60" height="36"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="Create"/>
                                             <connections>
                                                 <action selector="createChannel:" destination="x2j-kb-5mV" eventType="touchUpInside" id="by0-vG-1aY"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeo-f5-FFo">
+                                            <rect key="frame" x="16" y="4" width="63" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <state key="normal" title="Logout"/>
+                                            <connections>
+                                                <action selector="signoutButtonPressed:" destination="x2j-kb-5mV" eventType="touchUpInside" id="tif-at-n8P"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKm-df-iTB">
-                                            <rect key="frame" x="153.5" y="7" width="68" height="30"/>
+                                            <rect key="frame" x="101" y="7" width="177" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="68" id="AGa-rV-wOb"/>
+                                                <constraint firstAttribute="width" constant="177" id="AGa-rV-wOb"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="Profile"/>
@@ -278,23 +286,15 @@
                                                 <action selector="viewProfile:" destination="x2j-kb-5mV" eventType="touchUpInside" id="9dQ-Lb-MIc"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeo-f5-FFo">
-                                            <rect key="frame" x="39" y="4" width="63" height="36"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <state key="normal" title="Logout"/>
-                                            <connections>
-                                                <action selector="signoutButtonPressed:" destination="x2j-kb-5mV" eventType="touchUpInside" id="tif-at-n8P"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="WKm-df-iTB" firstAttribute="centerY" secondItem="4se-cC-KMb" secondAttribute="centerY" id="1ko-Ma-gxc"/>
                                         <constraint firstItem="WKm-df-iTB" firstAttribute="top" secondItem="zqp-en-ts1" secondAttribute="topMargin" constant="-1" id="QrG-1I-wLc"/>
                                         <constraint firstItem="WKm-df-iTB" firstAttribute="centerY" secondItem="aeo-f5-FFo" secondAttribute="centerY" id="Tbi-6z-gWk"/>
-                                        <constraint firstItem="aeo-f5-FFo" firstAttribute="leading" secondItem="zqp-en-ts1" secondAttribute="leadingMargin" constant="31" id="b4m-ue-En4"/>
+                                        <constraint firstItem="aeo-f5-FFo" firstAttribute="leading" secondItem="zqp-en-ts1" secondAttribute="leadingMargin" constant="8" id="b4m-ue-En4"/>
                                         <constraint firstItem="aeo-f5-FFo" firstAttribute="centerY" secondItem="zqp-en-ts1" secondAttribute="centerY" id="bxp-aS-hQU"/>
-                                        <constraint firstItem="WKm-df-iTB" firstAttribute="centerX" secondItem="zqp-en-ts1" secondAttribute="centerX" id="fJ0-YT-FfW"/>
-                                        <constraint firstItem="4se-cC-KMb" firstAttribute="trailing" secondItem="zqp-en-ts1" secondAttribute="trailingMargin" constant="-25" id="ueh-G5-xvX"/>
+                                        <constraint firstItem="WKm-df-iTB" firstAttribute="centerX" secondItem="zqp-en-ts1" secondAttribute="centerX" constant="2" id="fJ0-YT-FfW"/>
+                                        <constraint firstItem="4se-cC-KMb" firstAttribute="trailing" secondItem="zqp-en-ts1" secondAttribute="trailingMargin" id="ueh-G5-xvX"/>
                                         <constraint firstItem="4se-cC-KMb" firstAttribute="centerY" secondItem="zqp-en-ts1" secondAttribute="centerY" id="uwX-Ws-ve7"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -306,7 +306,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m4f-vC-RT4" id="mhf-iw-vvI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ytl-yL-dxb">
@@ -332,7 +332,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHe-Sh-dDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4598" y="-46"/>
+            <point key="canvasLocation" x="4597.6000000000004" y="-46.326836581709152"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="fNE-JP-QV9">
@@ -388,26 +388,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtE-rU-8NS">
-                                <rect key="frame" x="122" y="601" width="130" height="46"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="DISAGREE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="disagreePressed:" destination="xvG-b0-Jdd" eventType="touchUpInside" id="Bts-On-Pis"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V4-Yn-lWd">
-                                <rect key="frame" x="144" y="562" width="87" height="46"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="AGREE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="agreePressed:" destination="xvG-b0-Jdd" eventType="touchUpInside" id="xOa-1i-KV1"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFs-PA-Z7r">
                                 <rect key="frame" x="0.0" y="123" width="375" height="431"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -443,19 +423,27 @@ You agree not to:
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V4-Yn-lWd">
+                                <rect key="frame" x="144" y="588" width="87" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="AGREE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="agreePressed:" destination="xvG-b0-Jdd" eventType="touchUpInside" id="xOa-1i-KV1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1464153528213501" green="0.42682346701622009" blue="0.87155991792678833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="05z-Nc-BCn" firstAttribute="top" secondItem="9Ow-lH-E2T" secondAttribute="top" constant="66" id="3fw-uc-nJJ"/>
                             <constraint firstItem="0xg-vx-DFF" firstAttribute="top" secondItem="vFs-PA-Z7r" secondAttribute="bottom" constant="113" id="4SB-Fa-ZLD"/>
-                            <constraint firstAttribute="bottom" secondItem="NtE-rU-8NS" secondAttribute="bottom" constant="20" symbolic="YES" id="4m9-8k-krz"/>
                             <constraint firstItem="vFs-PA-Z7r" firstAttribute="leading" secondItem="9Ow-lH-E2T" secondAttribute="leading" id="NKY-s0-gq9"/>
                             <constraint firstItem="vFs-PA-Z7r" firstAttribute="top" secondItem="05z-Nc-BCn" secondAttribute="bottom" constant="27" id="SUL-23-Pn7"/>
                             <constraint firstItem="05z-Nc-BCn" firstAttribute="centerX" secondItem="vFs-PA-Z7r" secondAttribute="centerX" id="VPz-s2-FP6"/>
                             <constraint firstItem="05z-Nc-BCn" firstAttribute="top" secondItem="uhw-6k-knh" secondAttribute="bottom" constant="1" id="bHE-zN-lWm"/>
-                            <constraint firstItem="0xg-vx-DFF" firstAttribute="top" secondItem="7V4-Yn-lWd" secondAttribute="bottom" constant="59" id="dZ4-p8-QLI"/>
+                            <constraint firstItem="0xg-vx-DFF" firstAttribute="top" secondItem="7V4-Yn-lWd" secondAttribute="bottom" constant="33" id="dZ4-p8-QLI"/>
                             <constraint firstItem="7V4-Yn-lWd" firstAttribute="centerX" secondItem="9Ow-lH-E2T" secondAttribute="centerX" id="wLw-d7-pVm"/>
-                            <constraint firstItem="7V4-Yn-lWd" firstAttribute="centerX" secondItem="NtE-rU-8NS" secondAttribute="centerX" id="xcn-CL-0lK"/>
                             <constraint firstItem="uhw-6k-knh" firstAttribute="centerX" secondItem="9Ow-lH-E2T" secondAttribute="centerX" id="yOq-Js-ASY"/>
                             <constraint firstItem="05z-Nc-BCn" firstAttribute="centerX" secondItem="9Ow-lH-E2T" secondAttribute="centerX" id="zbM-Vr-JSE"/>
                         </constraints>
@@ -500,7 +488,7 @@ You agree not to:
                                 <rect key="frame" x="0.0" y="22" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y8O-vj-smh" id="i3y-H2-EKX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IJJ-QG-Jyf">
@@ -658,6 +646,6 @@ You agree not to:
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LrE-vI-KEv"/>
+        <segue reference="0NK-Cm-f3P"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,7 @@
 		844548F81DFDDCE800657670 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844548F71DFDDCE800657670 /* RegisterViewController.swift */; };
 		844548FA1DFDE67F00657670 /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844548F91DFDE67F00657670 /* ForgotViewController.swift */; };
 		844960F91DF60815004B476B /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459780D21D6465FB007BE66F /* UIImage+Gif.swift */; };
+		846974E31DFF4301007AFD97 /* Majors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 846974E21DFF4301007AFD97 /* Majors.txt */; };
 		847BC18D1DD6A08600309EE7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847BC18C1DD6A08600309EE7 /* ProfileViewController.swift */; };
 		848F3B301DFC8D150002AF04 /* Terms and conditions in Resources */ = {isa = PBXBuildFile; fileRef = 848F3B2F1DFC8D150002AF04 /* Terms and conditions */; };
 		84A148B41DFB9EB2007D11CC /* OnlineUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A148B31DFB9EB2007D11CC /* OnlineUsersViewController.swift */; };
@@ -43,6 +44,7 @@
 		84185E3B1DFBB42C00B604D6 /* TcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TcViewController.swift; sourceTree = "<group>"; };
 		844548F71DFDDCE800657670 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		844548F91DFDE67F00657670 /* ForgotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotViewController.swift; sourceTree = "<group>"; };
+		846974E21DFF4301007AFD97 /* Majors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Majors.txt; sourceTree = "<group>"; };
 		847BC18C1DD6A08600309EE7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		848F3B2F1DFC8D150002AF04 /* Terms and conditions */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Terms and conditions"; sourceTree = "<group>"; };
 		84A148B31DFB9EB2007D11CC /* OnlineUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUsersViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		BB53556D1BEF765800321277 = {
 			isa = PBXGroup;
 			children = (
+				846974E21DFF4301007AFD97 /* Majors.txt */,
 				848F3B2F1DFC8D150002AF04 /* Terms and conditions */,
 				8405D8571DE13AD700E3E296 /* README */,
 				84F1B6841DF4E873001DD3DA /* ProfanityFile.txt */,
@@ -251,6 +254,7 @@
 				BB5355841BEF765800321277 /* LaunchScreen.storyboard in Resources */,
 				45B210371D3B740700DB4827 /* GoogleService-Info.plist in Resources */,
 				BB5355811BEF765800321277 /* Assets.xcassets in Resources */,
+				846974E31DFF4301007AFD97 /* Majors.txt in Resources */,
 				BB53557F1BEF765800321277 /* Main.storyboard in Resources */,
 				84F1B6851DF4E873001DD3DA /* ProfanityFile.txt in Resources */,
 				848F3B301DFC8D150002AF04 /* Terms and conditions in Resources */,
@@ -369,6 +373,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -415,6 +420,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
