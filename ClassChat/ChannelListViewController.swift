@@ -179,6 +179,10 @@ class ChannelListViewController: UITableViewController {
         performSegue(withIdentifier: "viewProfile", sender: self)
    
     }
+    
+    func signout(){
+        try! FIRAuth.auth()?.signOut()
+    }
 
     
   // MARK: Firebase related methods
@@ -271,6 +275,15 @@ class ChannelListViewController: UITableViewController {
         
         let yesAction = UIAlertAction(title: "Yes",
                                       style: .default) { action in
+                                        FIRAuth.auth()!.addStateDidChangeListener { auth, user in
+                                            guard let user = user else { return }
+                                            self.user = User(authData: user)
+                                            // 1
+                                            let currentUserRef = self.usersRef.child(self.user.uid)
+
+                                            currentUserRef.removeValue()
+                                            self.signout()
+                                        }
                                         self.dismiss(animated: true, completion: nil)
         }
         let noAction = UIAlertAction(title: "No",

@@ -11,10 +11,11 @@ import Photos
 import Firebase
 
 class ProfileViewController: UIViewController {
-    let user = FIRAuth.auth()?.currentUser
+    let usersRef = FIRDatabase.database().reference(withPath: "online")
+    //let user = FIRAuth.auth()?.currentUser
     @IBOutlet var userName: UILabel!
     @IBOutlet var userEmail: UILabel!
-    
+    var user: User!
 
     
     override func viewDidLoad() {
@@ -28,7 +29,7 @@ class ProfileViewController: UIViewController {
     
     func setUILabel() {
         self.userEmail.text = gemail
-        self.userName.text = gname
+        self.userName.text = displayName
         
         
     }
@@ -89,8 +90,16 @@ class ProfileViewController: UIViewController {
         
         let yesAction = UIAlertAction(title: "Yes",
                                       style: .default) { action in
+                                        FIRAuth.auth()!.addStateDidChangeListener { auth, user in
+                                            guard let user = user else { return }
+                                            self.user = User(authData: user)
+                                            // 1
+                                            let currentUserRef = self.usersRef.child(self.user.uid)
+                                            
+                                            currentUserRef.removeValue()
+                                        }
             
-                                        self.user?.delete { error in
+                                       FIRAuth.auth()?.currentUser?.delete { error in
                                             if let err: Error = error {
                                                 let alert = UIAlertController(title: "Error",
                                                                               message: err.localizedDescription,
