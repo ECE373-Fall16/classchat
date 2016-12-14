@@ -34,15 +34,6 @@ class ProfileViewController: UIViewController {
     }
     
     
-    
-        
-    @IBAction func changeName(_ sender: AnyObject) {
-       
-    }
-    
-    @IBAction func goAnonymous(_ sender: AnyObject) {
-        
-    }
 
     @IBAction func changeEmail(_ sender: AnyObject) {
         let alert = UIAlertController(title: "Are you sure you want to change your email?",
