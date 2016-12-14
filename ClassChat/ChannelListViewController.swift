@@ -62,7 +62,7 @@ class ChannelListViewController: UITableViewController {
         // 2
         currentUserRef.setValue(self.user.email)
         // 3
-        currentUserRef.onDisconnectRemoveValue()
+        //currentUserRef.onDisconnectRemoveValue()
     }
     usersRef.observe(.value, with: { snapshot in
         if snapshot.exists() {
@@ -282,7 +282,7 @@ class ChannelListViewController: UITableViewController {
                                             let currentUserRef = self.usersRef.child(self.user.uid)
 
                                             currentUserRef.removeValue()
-                                            self.signout()
+                                            //self.signout()
                                         }
                                         self.dismiss(animated: true, completion: nil)
         }
