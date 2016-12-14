@@ -1,6 +1,8 @@
 language: objective-c  #1
 osx_image: xcode8.1 #2
 xcode_project: ClassChat.xcworkspace #3
-xcode_scheme: ClassChat
 xcode_sdk: iphonesimulator10.1 #5
 
+before_install:
+  - brew update
+  - brew outdated <package-name> || brew upgrade <package-name>
