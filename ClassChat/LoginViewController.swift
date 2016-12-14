@@ -62,6 +62,7 @@ class LoginViewController: UIViewController {
 		let umasscheck = emailField.text
     if ((emailField?.text != "") && (passwordField?.text != "") && (!containsProfanity(text: self.nameField.text!, Profanity: ProfanityWords)) && ((umasscheck?.hasSuffix("umass.edu"))! || (emailField?.text == "alexj2space@gmail.com"))){
         FIRAuth.auth()!.signIn(withEmail: emailField.text!, password: passwordField.text!){ (user, error) in
+			
         if let err: Error = error {
             print(err.localizedDescription)
 			let alert = UIAlertController(title: "Error",
@@ -76,6 +77,24 @@ class LoginViewController: UIViewController {
 			self.present(alert, animated: true, completion: nil)
 
             return
+		}else if let user = FIRAuth.auth()?.currentUser{
+			if (!user.isEmailVerified){
+				let alert = UIAlertController(title: "Email is not Verified",
+				                              message: "Please verify " + self.emailField.text! + " is correct and try again",
+				                              preferredStyle: .alert)
+				
+				let okayAction = UIAlertAction(title: "Okay",
+				                               style: .default){action in
+												user.sendEmailVerification(completion: nil)
+				}
+				
+				alert.addAction(okayAction)
+				
+				self.present(alert, animated: true, completion: nil)
+				
+				return
+
+			}
 			}
 			
 			//FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
