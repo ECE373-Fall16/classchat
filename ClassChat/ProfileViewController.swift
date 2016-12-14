@@ -27,14 +27,10 @@ class ProfileViewController: UIViewController {
     
     
     func setUILabel() {
-        let underlineUserName = NSAttributedString(string:gname, attributes:
-            [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
+        self.userEmail.text = gemail
+        self.userName.text = gname
         
-        let underlineUserEmail = NSAttributedString(string:gemail, attributes:
-        [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
         
-        self.userName.attributedText = underlineUserName
-        self.userEmail.attributedText = underlineUserEmail
     }
     
     

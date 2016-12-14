@@ -283,7 +283,14 @@
 
    
    
-   
+    let underlineUserName = NSAttributedString(string:gname, attributes:
+        [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
+    
+    let underlineUserEmail = NSAttributedString(string:gemail, attributes:
+        [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
+    
+    self.userName.attributedText = underlineUserName
+    self.userEmail.attributedText = underlineUserEmail
    
    
    
