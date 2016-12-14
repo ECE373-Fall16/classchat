@@ -11,12 +11,35 @@ import Firebase
 
 
 class ChangeEmailViewController: UIViewController {
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var verifyEmailField: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Change Email Address"
         
     }
+    
+    
+    @IBAction func ChangeEmail(_ sender: AnyObject) {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
 
