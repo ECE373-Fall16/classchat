@@ -264,3 +264,37 @@
     let itemRef = messageRef.childByAutoId()
    
    
+   
+   
+   
+   
+   
+    @IBOutlet weak var userName: UILabel!
+    func setName() {
+        self.userName.text = "Everaldlee Johnson"
+        //self.userName.attributedText = underlineAttriString
+    }
+    
+    @IBOutlet weak var userEmail: UILabel!
+    func setEmail() {
+        self.userEmail.text = "alexj2space@gmail.com"
+        //self.userEmail.attributedText = underlineAttriString
+    }
+
+   
+   
+   
+   
+   
+   
+   
+    FIRAuth.auth()!.addStateDidChangeListener { auth, user in
+        guard let user = user else { return }
+        self.user = User(authData: user)
+        // 1
+        let currentUserRef = self.usersRef.child(self.user.uid)
+        // 2
+        currentUserRef.setValue(self.user.email)
+        // 3
+        currentUserRef.onDisconnectRemoveValue()
+   }

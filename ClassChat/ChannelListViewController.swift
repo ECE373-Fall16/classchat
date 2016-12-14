@@ -43,6 +43,7 @@ class ChannelListViewController: UITableViewController {
     super.viewDidLoad()
     title = "Welcome to Class Chat"
     observeChannels()
+    displayNameChooser()
 
     
     userCountBarButtonItem = UIBarButtonItem(title: "1",
@@ -76,6 +77,7 @@ class ChannelListViewController: UITableViewController {
         if let path = Bundle.main.path(forResource: "ProfanityFile", ofType: "txt"){
             let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
             ProfanityWords = data.components(separatedBy: "\r\n")
+            //dump(ProfanityWords)
         }
     } catch let err as NSError {
         print("Error with importing file")
@@ -88,7 +90,7 @@ class ChannelListViewController: UITableViewController {
     
     func containsProfanity(text: String, Profanity: [String]) -> Bool {
         return Profanity
-            .reduce(false) { $0 || text.lowercased().contains($1.lowercased()) }
+            .reduce(false) { $0 || text.lowercased() == ($1.lowercased()) }
     }
     
     

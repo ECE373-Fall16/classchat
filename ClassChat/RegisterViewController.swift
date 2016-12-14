@@ -12,7 +12,7 @@ import Firebase
 
 
 class RegisterViewController: UIViewController {
-    @IBOutlet weak var nameField: UITextField!
+    //@IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var verifypasswordField: UITextField!
@@ -22,7 +22,7 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerDidTouch(_ sender: AnyObject) {
         let umasscheck = emailField.text
-        if (umasscheck!.hasSuffix("umass.edu")) && (nameField.text != "") && (emailField.text != "") && (passwordField.text != "") && (passwordField.text == verifypasswordField.text) {
+        if (umasscheck!.hasSuffix("umass.edu")) && (emailField.text != "") && (passwordField.text != "") && (passwordField.text == verifypasswordField.text) {
             
             
             FIRAuth.auth()!.createUser(withEmail: emailField.text!, password: passwordField.text!) { user, error in
@@ -58,7 +58,7 @@ class RegisterViewController: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 }
             }
-        }else if ((nameField.text == "") || (emailField.text == "") || (passwordField.text == "") || (verifypasswordField.text == "")){
+        }else if ((emailField.text == "") || (passwordField.text == "") || (verifypasswordField.text == "")){
             let alert = UIAlertController(title: "Error",
                                           message: "Please Fill in all Fields and try again",
                                           preferredStyle: .alert)

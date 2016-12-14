@@ -8,16 +8,33 @@
 import UIKit
 import Firebase
 
+
+var gname = ""
+var gemail = ""
+var displayName = ""
+
+
+func displayNameChooser(){
+	if (gname != ""){
+		displayName = gname
+	}else{
+		displayName = gemail
+	}
+	
+}
+
 class LoginViewController: UIViewController {
 	var loginPressed = false
 	var registerPressed = false
 	var forgotPressed = false
 	var TOCPressed = false
+	var ProfanityWords = [String]()
 	
 	
 	let loginToList = "LoginToList"
   
   // MARK: Properties
+  @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
   @IBOutlet weak var bottomLayoutGuideConstraint: NSLayoutConstraint!
@@ -43,7 +60,7 @@ class LoginViewController: UIViewController {
 	 forgotPressed = false
 	TOCPressed = false
 		let umasscheck = emailField.text
-    if ((emailField?.text != "") && (passwordField?.text != "") && (umasscheck?.hasSuffix("umass.edu"))!) || emailField?.text == "alexj2space@gmail.com" {
+    if ((emailField?.text != "") && (passwordField?.text != "") && (!containsProfanity(text: self.nameField.text!, Profanity: ProfanityWords)) && ((umasscheck?.hasSuffix("umass.edu"))! || (emailField?.text == "alexj2space@gmail.com"))){
         FIRAuth.auth()!.signIn(withEmail: emailField.text!, password: passwordField.text!){ (user, error) in
         if let err: Error = error {
             print(err.localizedDescription)
@@ -60,12 +77,25 @@ class LoginViewController: UIViewController {
 
             return
 			}
+			
 			//FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
-
-				
 			//}
             self.performSegue(withIdentifier: "LoginToChat", sender: nil)
+			gname = self.nameField.text!
+			gemail = self.emailField.text!
         }
+
+	}else if(containsProfanity(text: self.nameField.text!, Profanity: ProfanityWords)){
+		let alert = UIAlertController(title: "Error",
+		                              message: "No Profanity",
+		                              preferredStyle: .alert)
+		
+		let okayAction = UIAlertAction(title: "Okay",
+		                               style: .default)
+		
+		alert.addAction(okayAction)
+		
+		present(alert, animated: true, completion: nil)
 	}else{
 	let alert = UIAlertController(title: "Error",
 	                              message: "Please Enter Valid UMass Email and Password or Register!",
@@ -105,9 +135,26 @@ class LoginViewController: UIViewController {
 		performSegue(withIdentifier: "ToTOC", sender: self)
 	}
 	
+	
+	func containsProfanity(text: String, Profanity: [String]) -> Bool {
+		return Profanity
+			.reduce(false) { $0 || text.lowercased() == ($1.lowercased()) }
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		do {
+			// This solution assumes  you've got the file in your bundle
+			if let path = Bundle.main.path(forResource: "ProfanityFile", ofType: "txt"){
+				let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+				ProfanityWords = data.components(separatedBy: "\r\n")
+			}
+		} catch let err as NSError {
+			print("Error with importing file")
+			print(err)
+		}
+
 	
 		
 		//Looks for single or multiple taps.

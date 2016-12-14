@@ -153,7 +153,7 @@ final class ChatViewController: JSQMessagesViewController {
     // Mark: Censoring Messages
     func containsProfanity(text: String, Profanity: [String]) -> Bool {
         return Profanity
-            .reduce(false) { $0 || text.lowercased().contains($1.lowercased()) }
+            .reduce(false) { $0 || text.lowercased() == ($1.lowercased()) }
     }
     
     
@@ -262,7 +262,7 @@ final class ChatViewController: JSQMessagesViewController {
             // 2
             let messageItem = [
                 "senderId": senderId!,
-                "senderName": senderDisplayName!,
+                "senderName": displayName,
                 "text": text!,
                 ]
             
