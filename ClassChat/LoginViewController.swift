@@ -14,13 +14,22 @@ var gemail = ""
 var displayName = ""
 
 
-func displayNameChooser(){
+public func displayNameChooser(){
 	if (gname != ""){
 		displayName = gname
 	}else{
 		displayName = gemail
 	}
 	
+}
+
+public func displayNameChooserT( name: String, email: String) -> String{
+	if (name != ""){
+		displayName = name
+	}else{
+		displayName = email
+	}
+	return displayName
 }
 
 public class LoginViewController: UIViewController {
@@ -37,6 +46,7 @@ public class LoginViewController: UIViewController {
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
+@IBOutlet weak var testField: UITextField!
   @IBOutlet weak var bottomLayoutGuideConstraint: NSLayoutConstraint!
 
 
@@ -52,7 +62,12 @@ public class LoginViewController: UIViewController {
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
   }
-  
+	
+	
+	
+	
+	
+
 
   @IBAction func loginDidTouch(_ sender: AnyObject) {
 	 loginPressed = true
@@ -62,7 +77,7 @@ public class LoginViewController: UIViewController {
 		let umasscheck = emailField.text
     if ((emailField?.text != "") && (passwordField?.text != "") && (!containsProfanity(text: self.nameField.text!, Profanity: ProfanityWords)) && ((umasscheck?.hasSuffix("umass.edu"))! || (emailField?.text == "alexj2space@gmail.com"))){
         FIRAuth.auth()!.signIn(withEmail: emailField.text!, password: passwordField.text!){ (user, error) in
-			
+		
         if let err: Error = error {
             print(err.localizedDescription)
 			let alert = UIAlertController(title: "Error",
