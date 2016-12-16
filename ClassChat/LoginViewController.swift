@@ -23,7 +23,7 @@ func displayNameChooser(){
 	
 }
 
-class LoginViewController: UIViewController {
+public class LoginViewController: UIViewController {
 	var loginPressed = false
 	var registerPressed = false
 	var forgotPressed = false
@@ -41,13 +41,13 @@ class LoginViewController: UIViewController {
 
 
   
-  override func viewWillAppear(_ animated: Bool) {
+  override public func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
+  override public func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -160,7 +160,7 @@ class LoginViewController: UIViewController {
 			.reduce(false) { $0 || text.lowercased() == ($1.lowercased()) }
 	}
 
-	override func viewDidLoad() {
+	override public func viewDidLoad() {
 		super.viewDidLoad()
 		
 		do {
@@ -196,7 +196,7 @@ class LoginViewController: UIViewController {
 	
   // MARK: Navigation
 
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
 	if loginPressed {
 		let navVc = segue.destination as! UINavigationController
@@ -224,7 +224,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: UITextFieldDelegate {
 	
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+	public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		if textField == emailField {
 			passwordField.becomeFirstResponder()
 		}

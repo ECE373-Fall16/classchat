@@ -1,17 +1,14 @@
 //
-//  ChannelListControllerTest.swift
-//  ClassChat
+//  ClassChatTests.swift
+//  ClassChatTests
 //
 //  Created by Everaldlee Johnson on 12/16/16.
 //
 //
 
-import UIKit
 import XCTest
-import Firebase
-import ClassChat
 
-class ChannelListControllerTest: XCTestCase {
+class ClassChatTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

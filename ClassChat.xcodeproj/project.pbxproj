@@ -11,6 +11,7 @@
 		45A0D8FE1D49508800F26729 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0D8FD1D49508800F26729 /* CreateChannelCell.swift */; };
 		45A0D9011D4BB5E900F26729 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0D9001D4BB5E900F26729 /* Channel.swift */; };
 		45B210371D3B740700DB4827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45B210361D3B740700DB4827 /* GoogleService-Info.plist */; };
+		743C2533978416770B1D2347 /* Pods_ClassChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE27FF4EA6D32F2625E1539B /* Pods_ClassChatTests.framework */; };
 		8405D8581DE13AD800E3E296 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 8405D8571DE13AD700E3E296 /* README */; };
 		84185E3C1DFBB42C00B604D6 /* TcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84185E3B1DFBB42C00B604D6 /* TcViewController.swift */; };
 		8426D3C61E00540B000523B7 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426D3C51E00540B000523B7 /* ChangePasswordViewController.swift */; };
@@ -23,8 +24,9 @@
 		848F3B301DFC8D150002AF04 /* Terms and conditions in Resources */ = {isa = PBXBuildFile; fileRef = 848F3B2F1DFC8D150002AF04 /* Terms and conditions */; };
 		84A148B41DFB9EB2007D11CC /* OnlineUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A148B31DFB9EB2007D11CC /* OnlineUsersViewController.swift */; };
 		84A148B81DFBA92D007D11CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A148B71DFBA92D007D11CC /* User.swift */; };
-		84D5415F1E0471C5006C7A7C /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5415E1E0471C5006C7A7C /* LoginViewControllerTest.swift */; };
-		84D541651E047A65006C7A7C /* ChannelListControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D541641E047A65006C7A7C /* ChannelListControllerTest.swift */; };
+		84D5416D1E047E97006C7A7C /* ClassChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5416C1E047E97006C7A7C /* ClassChatTests.swift */; };
+		84D541741E047ECF006C7A7C /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5415E1E0471C5006C7A7C /* LoginViewControllerTest.swift */; };
+		84D541751E047ED3006C7A7C /* ChannelListControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D541641E047A65006C7A7C /* ChannelListControllerTest.swift */; };
 		84F1B6851DF4E873001DD3DA /* ProfanityFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84F1B6841DF4E873001DD3DA /* ProfanityFile.txt */; };
 		BB53557A1BEF765800321277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5355791BEF765800321277 /* AppDelegate.swift */; };
 		BB53557C1BEF765800321277 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53557B1BEF765800321277 /* LoginViewController.swift */; };
@@ -34,6 +36,16 @@
 		EFD8CB21482794F526094934 /* Pods_ClassChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF295D3D9F7CD3D8E3785FC9 /* Pods_ClassChat.framework */; };
 		FBEE53041D7B26450004CC1B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE53031D7B26450004CC1B /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84D5416F1E047E97006C7A7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB53556E1BEF765800321277 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB5355751BEF765800321277;
+			remoteInfo = ClassChat;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2B6B7B72F3DB9CDAEB3D3C8F /* Pods-ClassChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClassChat/Pods-ClassChat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -55,11 +67,15 @@
 		848F3B2F1DFC8D150002AF04 /* Terms and conditions */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Terms and conditions"; sourceTree = "<group>"; };
 		84A148B31DFB9EB2007D11CC /* OnlineUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUsersViewController.swift; sourceTree = "<group>"; };
 		84A148B71DFBA92D007D11CC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		84D5415E1E0471C5006C7A7C /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
-		84D541641E047A65006C7A7C /* ChannelListControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListControllerTest.swift; sourceTree = "<group>"; };
+		84D5415E1E0471C5006C7A7C /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewControllerTest.swift; path = ../ClassChat/LoginViewControllerTest.swift; sourceTree = "<group>"; };
+		84D541641E047A65006C7A7C /* ChannelListControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelListControllerTest.swift; path = ../ClassChat/ChannelListControllerTest.swift; sourceTree = "<group>"; };
+		84D5416A1E047E97006C7A7C /* ClassChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D5416C1E047E97006C7A7C /* ClassChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassChatTests.swift; sourceTree = "<group>"; };
+		84D5416E1E047E97006C7A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F1B6841DF4E873001DD3DA /* ProfanityFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProfanityFile.txt; sourceTree = "<group>"; };
 		84F2FA451DECDCFB00E85BD3 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 		84F2FA461DECDE1F00E85BD3 /* Backup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backup.swift; sourceTree = "<group>"; };
+		8B4D3A0C598EE5756F07EBB1 /* Pods-ClassChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClassChatTests/Pods-ClassChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1EDF78DBA8BB1C872022BD0 /* Pods-ClassChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClassChat/Pods-ClassChat.release.xcconfig"; sourceTree = "<group>"; };
 		BB1E97061C147BAA00E34853 /* ClassChat-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ClassChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB5355761BEF765800321277 /* ClassChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,12 +86,22 @@
 		BB5355831BEF765800321277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB5355851BEF765800321277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF295D3D9F7CD3D8E3785FC9 /* Pods_ClassChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25FF21E27244D2ECCDDB399 /* Pods-ClassChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClassChatTests/Pods-ClassChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE27FF4EA6D32F2625E1539B /* Pods_ClassChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DDF38A1BEF88DC00B5F45A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E8DDF38C1BEF88E200B5F45A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		FBEE53031D7B26450004CC1B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		84D541671E047E97006C7A7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				743C2533978416770B1D2347 /* Pods_ClassChatTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BB5355731BEF765800321277 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,14 +122,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		84D5415D1E047128006C7A7C /* Testing */ = {
+		84D5416B1E047E97006C7A7C /* ClassChatTests */ = {
 			isa = PBXGroup;
 			children = (
 				84D5415E1E0471C5006C7A7C /* LoginViewControllerTest.swift */,
 				84D541641E047A65006C7A7C /* ChannelListControllerTest.swift */,
+				84D5416C1E047E97006C7A7C /* ClassChatTests.swift */,
+				84D5416E1E047E97006C7A7C /* Info.plist */,
 			);
-			name = Testing;
-			path = ClassChat;
+			path = ClassChatTests;
 			sourceTree = "<group>";
 		};
 		85DB15776B3ACE41DF631DCF /* Pods */ = {
@@ -111,6 +138,8 @@
 			children = (
 				2B6B7B72F3DB9CDAEB3D3C8F /* Pods-ClassChat.debug.xcconfig */,
 				B1EDF78DBA8BB1C872022BD0 /* Pods-ClassChat.release.xcconfig */,
+				8B4D3A0C598EE5756F07EBB1 /* Pods-ClassChatTests.debug.xcconfig */,
+				D25FF21E27244D2ECCDDB399 /* Pods-ClassChatTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -121,6 +150,7 @@
 				E8DDF38C1BEF88E200B5F45A /* Social.framework */,
 				E8DDF38A1BEF88DC00B5F45A /* Accounts.framework */,
 				CF295D3D9F7CD3D8E3785FC9 /* Pods_ClassChat.framework */,
+				DE27FF4EA6D32F2625E1539B /* Pods_ClassChatTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,8 +162,8 @@
 				848F3B2F1DFC8D150002AF04 /* Terms and conditions */,
 				8405D8571DE13AD700E3E296 /* README */,
 				84F1B6841DF4E873001DD3DA /* ProfanityFile.txt */,
-				84D5415D1E047128006C7A7C /* Testing */,
 				BB5355781BEF765800321277 /* ClassChat */,
+				84D5416B1E047E97006C7A7C /* ClassChatTests */,
 				BB5355771BEF765800321277 /* Products */,
 				85DB15776B3ACE41DF631DCF /* Pods */,
 				97CEDEF6DA0B51A3522B766A /* Frameworks */,
@@ -144,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				BB5355761BEF765800321277 /* ClassChat.app */,
+				84D5416A1E047E97006C7A7C /* ClassChatTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,6 +237,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		84D541691E047E97006C7A7C /* ClassChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84D541711E047E97006C7A7C /* Build configuration list for PBXNativeTarget "ClassChatTests" */;
+			buildPhases = (
+				09A3EDFA3612D5C3C5A339E5 /* [CP] Check Pods Manifest.lock */,
+				84D541661E047E97006C7A7C /* Sources */,
+				84D541671E047E97006C7A7C /* Frameworks */,
+				84D541681E047E97006C7A7C /* Resources */,
+				C0B5F89698D6B9DC410FD36D /* [CP] Embed Pods Frameworks */,
+				DB366447D559243EC551E0A6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84D541701E047E97006C7A7C /* PBXTargetDependency */,
+			);
+			name = ClassChatTests;
+			productName = ClassChatTests;
+			productReference = 84D5416A1E047E97006C7A7C /* ClassChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BB5355751BEF765800321277 /* ClassChat */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB5355881BEF765800321277 /* Build configuration list for PBXNativeTarget "ClassChat" */;
@@ -232,10 +284,16 @@
 		BB53556E1BEF765800321277 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
+					84D541691E047E97006C7A7C = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 25ZGMGU553;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BB5355751BEF765800321277;
+					};
 					BB5355751BEF765800321277 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 25ZGMGU553;
@@ -262,11 +320,19 @@
 			projectRoot = "";
 			targets = (
 				BB5355751BEF765800321277 /* ClassChat */,
+				84D541691E047E97006C7A7C /* ClassChatTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		84D541681E047E97006C7A7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BB5355741BEF765800321277 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +351,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09A3EDFA3612D5C3C5A339E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		5D170929619EDFD2B561CD41 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +396,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClassChat/Pods-ClassChat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C0B5F89698D6B9DC410FD36D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClassChatTests/Pods-ClassChatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB366447D559243EC551E0A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClassChatTests/Pods-ClassChatTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E8CE6FD67453F3208A90364C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,6 +444,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		84D541661E047E97006C7A7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D541741E047ECF006C7A7C /* LoginViewControllerTest.swift in Sources */,
+				84D5416D1E047E97006C7A7C /* ClassChatTests.swift in Sources */,
+				84D541751E047ED3006C7A7C /* ChannelListControllerTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BB5355721BEF765800321277 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,8 +461,6 @@
 				BB53557C1BEF765800321277 /* LoginViewController.swift in Sources */,
 				45A0D9011D4BB5E900F26729 /* Channel.swift in Sources */,
 				84185E3C1DFBB42C00B604D6 /* TcViewController.swift in Sources */,
-				84D541651E047A65006C7A7C /* ChannelListControllerTest.swift in Sources */,
-				84D5415F1E0471C5006C7A7C /* LoginViewControllerTest.swift in Sources */,
 				844548FA1DFDE67F00657670 /* ForgotViewController.swift in Sources */,
 				844548F81DFDDCE800657670 /* RegisterViewController.swift in Sources */,
 				8426D3C81E0055D6000523B7 /* ChangeEmailViewController.swift in Sources */,
@@ -358,6 +477,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84D541701E047E97006C7A7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB5355751BEF765800321277 /* ClassChat */;
+			targetProxy = 84D5416F1E047E97006C7A7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BB53557D1BEF765800321277 /* Main.storyboard */ = {
@@ -379,6 +506,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		84D541721E047E97006C7A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B4D3A0C598EE5756F07EBB1 /* Pods-ClassChatTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = 25ZGMGU553;
+				INFOPLIST_FILE = ClassChatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.umass.ClassChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClassChat.app/ClassChat";
+			};
+			name = Debug;
+		};
+		84D541731E047E97006C7A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D25FF21E27244D2ECCDDB399 /* Pods-ClassChatTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = 25ZGMGU553;
+				INFOPLIST_FILE = ClassChatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.umass.ClassChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClassChat.app/ClassChat";
+			};
+			name = Release;
+		};
 		BB5355861BEF765800321277 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -517,6 +682,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		84D541711E047E97006C7A7C /* Build configuration list for PBXNativeTarget "ClassChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D541721E047E97006C7A7C /* Debug */,
+				84D541731E047E97006C7A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BB5355711BEF765800321277 /* Build configuration list for PBXProject "ClassChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
