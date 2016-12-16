@@ -3,8 +3,7 @@
 //  ClassChat
 //
 //  Created by Everaldlee Johnson on 11/2/16.
-//  Copyright © 2016 Everaldlee Johnson. All rights reserved.
-//
+
 import UIKit
 import Photos
 import Firebase
@@ -54,7 +53,7 @@ final class ChatViewController: JSQMessagesViewController {
   lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
   lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
   
-  // MARK: View Lifecycle
+ 
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -188,10 +187,7 @@ final class ChatViewController: JSQMessagesViewController {
       }
     })
     
-    // We can also use the observer method to listen for
-    // changes to existing messages.
-    // We use this to be notified when a photo has been stored
-    // to the Firebase Storage, so we can update the message data
+  
     updatedMessageRefHandle = messageRef.observe(.childChanged, with: { (snapshot) in
       let key = snapshot.key
       let messageData = snapshot.value as! Dictionary<String, String>
@@ -316,7 +312,7 @@ final class ChatViewController: JSQMessagesViewController {
     itemRef.updateChildValues(["photoURL": url])
   }
   
-  // MARK: UI and User Interaction
+  
   
   private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
     let bubbleImageFactory = JSQMessagesBubbleImageFactory()
@@ -392,7 +388,7 @@ final class ChatViewController: JSQMessagesViewController {
     }
   }
   
-  // MARK: UITextViewDelegate methods
+ 
   
   override func textViewDidChange(_ textView: UITextView) {
     super.textViewDidChange(textView)
