@@ -23,6 +23,8 @@
 		848F3B301DFC8D150002AF04 /* Terms and conditions in Resources */ = {isa = PBXBuildFile; fileRef = 848F3B2F1DFC8D150002AF04 /* Terms and conditions */; };
 		84A148B41DFB9EB2007D11CC /* OnlineUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A148B31DFB9EB2007D11CC /* OnlineUsersViewController.swift */; };
 		84A148B81DFBA92D007D11CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A148B71DFBA92D007D11CC /* User.swift */; };
+		84D5415F1E0471C5006C7A7C /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5415E1E0471C5006C7A7C /* LoginViewControllerTest.swift */; };
+		84D541651E047A65006C7A7C /* ChannelListControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D541641E047A65006C7A7C /* ChannelListControllerTest.swift */; };
 		84F1B6851DF4E873001DD3DA /* ProfanityFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84F1B6841DF4E873001DD3DA /* ProfanityFile.txt */; };
 		BB53557A1BEF765800321277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5355791BEF765800321277 /* AppDelegate.swift */; };
 		BB53557C1BEF765800321277 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53557B1BEF765800321277 /* LoginViewController.swift */; };
@@ -53,6 +55,8 @@
 		848F3B2F1DFC8D150002AF04 /* Terms and conditions */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Terms and conditions"; sourceTree = "<group>"; };
 		84A148B31DFB9EB2007D11CC /* OnlineUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUsersViewController.swift; sourceTree = "<group>"; };
 		84A148B71DFBA92D007D11CC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		84D5415E1E0471C5006C7A7C /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
+		84D541641E047A65006C7A7C /* ChannelListControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListControllerTest.swift; sourceTree = "<group>"; };
 		84F1B6841DF4E873001DD3DA /* ProfanityFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProfanityFile.txt; sourceTree = "<group>"; };
 		84F2FA451DECDCFB00E85BD3 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 		84F2FA461DECDE1F00E85BD3 /* Backup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backup.swift; sourceTree = "<group>"; };
@@ -92,6 +96,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		84D5415D1E047128006C7A7C /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				84D5415E1E0471C5006C7A7C /* LoginViewControllerTest.swift */,
+				84D541641E047A65006C7A7C /* ChannelListControllerTest.swift */,
+			);
+			name = Testing;
+			path = ClassChat;
+			sourceTree = "<group>";
+		};
 		85DB15776B3ACE41DF631DCF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +132,7 @@
 				848F3B2F1DFC8D150002AF04 /* Terms and conditions */,
 				8405D8571DE13AD700E3E296 /* README */,
 				84F1B6841DF4E873001DD3DA /* ProfanityFile.txt */,
+				84D5415D1E047128006C7A7C /* Testing */,
 				BB5355781BEF765800321277 /* ClassChat */,
 				BB5355771BEF765800321277 /* Products */,
 				85DB15776B3ACE41DF631DCF /* Pods */,
@@ -325,6 +340,8 @@
 				BB53557C1BEF765800321277 /* LoginViewController.swift in Sources */,
 				45A0D9011D4BB5E900F26729 /* Channel.swift in Sources */,
 				84185E3C1DFBB42C00B604D6 /* TcViewController.swift in Sources */,
+				84D541651E047A65006C7A7C /* ChannelListControllerTest.swift in Sources */,
+				84D5415F1E0471C5006C7A7C /* LoginViewControllerTest.swift in Sources */,
 				844548FA1DFDE67F00657670 /* ForgotViewController.swift in Sources */,
 				844548F81DFDDCE800657670 /* RegisterViewController.swift in Sources */,
 				8426D3C81E0055D6000523B7 /* ChangeEmailViewController.swift in Sources */,
@@ -459,6 +476,7 @@
 				CODE_SIGN_ENTITLEMENTS = ClassChat/ClassChat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 25ZGMGU553;
 				INFOPLIST_FILE = "$(SRCROOT)/ClassChat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -482,6 +500,7 @@
 				CODE_SIGN_ENTITLEMENTS = ClassChat/ClassChat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 25ZGMGU553;
 				INFOPLIST_FILE = "$(SRCROOT)/ClassChat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
