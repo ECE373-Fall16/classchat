@@ -46,7 +46,6 @@ public class LoginViewController: UIViewController {
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
-@IBOutlet weak var testField: UITextField!
   @IBOutlet weak var bottomLayoutGuideConstraint: NSLayoutConstraint!
 
 
