@@ -10,3 +10,14 @@ target 'ClassChat' do
   pod 'Firebase/Core'
 
 end
+
+target 'ClassChatTests’ do
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/RemoteConfig'
+  pod 'JSQMessagesViewController'
+  pod 'Firebase/Core'
+
+end
+

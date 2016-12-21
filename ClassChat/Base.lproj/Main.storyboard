@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xvG-b0-Jdd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xvG-b0-Jdd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -167,7 +167,7 @@
         <!--Forgot View Controller-->
         <scene sceneID="Fyw-I9-EzO">
             <objects>
-                <viewController id="Yo5-0P-OET" customClass="ForgotViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotViewController" id="Yo5-0P-OET" customClass="ForgotViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2bF-Dd-laT"/>
                         <viewControllerLayoutGuide type="bottom" id="8ut-jr-2KN"/>
@@ -258,7 +258,7 @@
         <!--Channel List View Controller-->
         <scene sceneID="bg1-OT-nd2">
             <objects>
-                <tableViewController id="x2j-kb-5mV" customClass="ChannelListViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ChannelListViewController" id="x2j-kb-5mV" customClass="ChannelListViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JJM-X8-sVb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -349,7 +349,7 @@
         <!--Chat View Controller-->
         <scene sceneID="fNE-JP-QV9">
             <objects>
-                <viewController id="IHh-zK-Dgq" customClass="ChatViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" id="IHh-zK-Dgq" customClass="ChatViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gTb-3o-Wit"/>
                         <viewControllerLayoutGuide type="bottom" id="fAp-tJ-32e"/>
@@ -391,7 +391,7 @@
         <!--Tc View Controller-->
         <scene sceneID="Dq3-hl-zHI">
             <objects>
-                <viewController id="xvG-b0-Jdd" customClass="TcViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TcViewController" id="xvG-b0-Jdd" customClass="TcViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2gY-Uc-UjE"/>
                         <viewControllerLayoutGuide type="bottom" id="0xg-vx-DFF"/>
@@ -471,7 +471,7 @@ You agree not to:
         <!--Profile View Controller-->
         <scene sceneID="Drv-SE-Jhz">
             <objects>
-                <viewController id="Rzg-x9-NFz" customClass="ProfileViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="Rzg-x9-NFz" customClass="ProfileViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xwk-jK-QUK"/>
                         <viewControllerLayoutGuide type="bottom" id="DdO-jN-pcJ"/>
@@ -551,7 +551,7 @@ You agree not to:
         <!--Change Email View Controller-->
         <scene sceneID="vZo-me-an2">
             <objects>
-                <viewController id="Z3i-fJ-AXa" customClass="ChangeEmailViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeEmailViewController" id="Z3i-fJ-AXa" customClass="ChangeEmailViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tul-ZY-Uul"/>
                         <viewControllerLayoutGuide type="bottom" id="aDi-tL-bJC"/>
@@ -632,7 +632,7 @@ You agree not to:
         <!--Change Password View Controller-->
         <scene sceneID="Xew-1A-KKy">
             <objects>
-                <viewController id="4zI-94-4a7" customClass="ChangePasswordViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordViewController" id="4zI-94-4a7" customClass="ChangePasswordViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nTL-mB-eJi"/>
                         <viewControllerLayoutGuide type="bottom" id="hW9-ZA-6tX"/>
@@ -728,7 +728,7 @@ You agree not to:
         <!--Online Users View Controller-->
         <scene sceneID="Ri9-hs-mjw">
             <objects>
-                <tableViewController id="JC5-e1-iJD" customClass="OnlineUsersViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="OnlineUsersViewController" id="JC5-e1-iJD" customClass="OnlineUsersViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="eDA-pQ-yeZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -766,7 +766,7 @@ You agree not to:
         <!--Register View Controller-->
         <scene sceneID="enC-bs-Qg5">
             <objects>
-                <viewController id="fga-c4-o1N" customClass="RegisterViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="fga-c4-o1N" customClass="RegisterViewController" customModule="ClassChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BK3-qv-8oc"/>
                         <viewControllerLayoutGuide type="bottom" id="JoE-q7-s3c"/>

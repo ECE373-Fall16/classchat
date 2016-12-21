@@ -305,3 +305,37 @@
         // 3
         currentUserRef.onDisconnectRemoveValue()
    }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if loginPressed {
+            let navVc = segue.destination as! UINavigationController
+            let channelVc = navVc.viewControllers.first as! ChannelListViewController
+            
+            channelVc.senderDisplayName = emailField?.text
+        }else{
+            
+        }
+        
+   }

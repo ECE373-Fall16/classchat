@@ -13,8 +13,7 @@ var gname = ""
 var gemail = ""
 var displayName = ""
 
-
-func displayNameChooser(){
+public func displayNameChooser(){
 	if (gname != ""){
 		displayName = gname
 	}else{
@@ -23,12 +22,16 @@ func displayNameChooser(){
 	
 }
 
-class LoginViewController: UIViewController {
+
+public class LoginViewController: UIViewController {
 	var loginPressed = false
 	var registerPressed = false
 	var forgotPressed = false
 	var TOCPressed = false
 	var ProfanityWords = [String]()
+	
+	var Boolean = false
+	var success = false
 	
 	
 	let loginToList = "LoginToList"
@@ -41,32 +44,91 @@ class LoginViewController: UIViewController {
 
 
   
-  override func viewWillAppear(_ animated: Bool) {
+  override public func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
+  override public func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
   }
-  
+	
+	
+	
+	
+	
+
 
   @IBAction func loginDidTouch(_ sender: AnyObject) {
+	Boolean = false
 	 loginPressed = true
 	 registerPressed = false
 	 forgotPressed = false
 	TOCPressed = false
-		let umasscheck = emailField.text
-    if ((emailField?.text != "") && (passwordField?.text != "") && (!containsProfanity(text: self.nameField.text!, Profanity: ProfanityWords)) && ((umasscheck?.hasSuffix("umass.edu"))! || (emailField?.text == "alexj2space@gmail.com"))){
-        FIRAuth.auth()!.signIn(withEmail: emailField.text!, password: passwordField.text!){ (user, error) in
+	if (loginFunc(name: nameField.text!, email: emailField.text!, password: passwordField.text!)){
+		FIRAuth.auth()!.signIn(withEmail: emailField.text!, password: passwordField.text!){ (user, error) in
 			
-        if let err: Error = error {
-            print(err.localizedDescription)
+			if let err: Error = error {
+				print(err.localizedDescription)
+				let alert = UIAlertController(title: "Error",
+				                              message: err.localizedDescription,
+				                              preferredStyle: .alert)
+				
+				let okayAction = UIAlertAction(title: "Okay",
+				                               style: .default)
+				
+				alert.addAction(okayAction)
+				
+				self.present(alert, animated: true, completion: nil)
+				
+				return
+			}else if let user = FIRAuth.auth()?.currentUser{
+				if (!user.isEmailVerified){
+					let alert = UIAlertController(title: "Email is not Verified",
+					                              message: "Please verify " + self.emailField.text! + " is correct and try again",
+					                              preferredStyle: .alert)
+					
+					let okayAction = UIAlertAction(title: "Okay",
+					                               style: .default){action in
+													user.sendEmailVerification(completion: nil)
+					}
+					
+					alert.addAction(okayAction)
+					
+					self.present(alert, animated: true, completion: nil)
+					
+					return
+				}
+			}
+			gname = self.nameField.text!
+			gemail = self.emailField.text!
+			self.performSegue(withIdentifier: "LoginToChat", sender: nil)
+			self.success = true
+			
+			
+		}
+	}
+	}
+	
+	
+
+	
+	
+	
+	
+	public func loginFunc(name: String, email: String, password: String) -> Bool{
+		Boolean = false
+		
+		if ((email != "") && (password != "") && (!containsProfanity(text: name, Profanity: ProfanityWords)) && (((email.hasSuffix("umass.edu")) || (email == "alexj2space@gmail.com")))){
+			Boolean = true
+			
+		}else if(containsProfanity(text: name, Profanity: ProfanityWords)){
+			Boolean = false
 			let alert = UIAlertController(title: "Error",
-			                              message: err.localizedDescription,
+			                              message: "No Profanity",
 			                              preferredStyle: .alert)
 			
 			let okayAction = UIAlertAction(title: "Okay",
@@ -74,61 +136,34 @@ class LoginViewController: UIViewController {
 			
 			alert.addAction(okayAction)
 			
-			self.present(alert, animated: true, completion: nil)
-
-            return
-		}else if let user = FIRAuth.auth()?.currentUser{
-			if (!user.isEmailVerified){
-				let alert = UIAlertController(title: "Email is not Verified",
-				                              message: "Please verify " + self.emailField.text! + " is correct and try again",
-				                              preferredStyle: .alert)
-				
-				let okayAction = UIAlertAction(title: "Okay",
-				                               style: .default){action in
-												user.sendEmailVerification(completion: nil)
-				}
-				
-				alert.addAction(okayAction)
-				
-				self.present(alert, animated: true, completion: nil)
-				
-				return
-
-			}
-			}
+			present(alert, animated: true, completion: nil)
 			
-			//FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
-			//}
-            self.performSegue(withIdentifier: "LoginToChat", sender: nil)
-			gname = self.nameField.text!
-			gemail = self.emailField.text!
-        }
+			
+		}else{
+			let alert = UIAlertController(title: "Error",
+			                              message: "Please Enter Valid UMass Email and Password or Register!",
+			                              preferredStyle: .alert)
+			
+			let okayAction = UIAlertAction(title: "Okay",
+			                               style: .default)
+			
+			alert.addAction(okayAction)
+			
+			present(alert, animated: true, completion: nil)
+			
 
-	}else if(containsProfanity(text: self.nameField.text!, Profanity: ProfanityWords)){
-		let alert = UIAlertController(title: "Error",
-		                              message: "No Profanity",
-		                              preferredStyle: .alert)
-		
-		let okayAction = UIAlertAction(title: "Okay",
-		                               style: .default)
-		
-		alert.addAction(okayAction)
-		
-		present(alert, animated: true, completion: nil)
-	}else{
-	let alert = UIAlertController(title: "Error",
-	                              message: "Please Enter Valid UMass Email and Password or Register!",
-	                              preferredStyle: .alert)
-		
-		let okayAction = UIAlertAction(title: "Okay",
-		                                 style: .default)
-		
-		alert.addAction(okayAction)
-		
-		present(alert, animated: true, completion: nil)
-	
+			
+		}
+		return Boolean
 	}
-    }
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@IBAction func registerDidTouch(_ sender: AnyObject) {
 		loginPressed = false
@@ -160,7 +195,7 @@ class LoginViewController: UIViewController {
 			.reduce(false) { $0 || text.lowercased() == ($1.lowercased()) }
 	}
 
-	override func viewDidLoad() {
+	override public func viewDidLoad() {
 		super.viewDidLoad()
 		
 		do {
@@ -195,20 +230,21 @@ class LoginViewController: UIViewController {
 
 	
   // MARK: Navigation
-
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    super.prepare(for: segue, sender: sender)
-	if loginPressed {
-		let navVc = segue.destination as! UINavigationController
-		let channelVc = navVc.viewControllers.first as! ChannelListViewController
-		
-		channelVc.senderDisplayName = emailField?.text
-	}else{
+	override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
+		if loginPressed {
+			let navVc = segue.destination as! UINavigationController
+			let channelVc = navVc.viewControllers.first as! ChannelListViewController
+			
+			channelVc.senderDisplayName = emailField?.text
+		}else{
+			
+		}
 		
 	}
+
+
 	
-  }
-  
   // MARK: - Notificat.ions
 	
   func keyboardWillShowNotification(_ notification: Notification) {
@@ -224,7 +260,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: UITextFieldDelegate {
 	
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+	public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		if textField == emailField {
 			passwordField.becomeFirstResponder()
 		}
