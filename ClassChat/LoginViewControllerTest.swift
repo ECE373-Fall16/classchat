@@ -37,7 +37,6 @@ class LoginViewControllerTest: XCTestCase {
     func testLoginMultiple(){
         let loginView = LoginViewController()
         XCTAssertTrue(loginView.loginFunc(name: "Test", email: "testUser@umass.edu", password: "password"))
-        XCTAssertFalse(loginView.loginFunc(name: "fuck", email: "testUser@umass.edu", password: "password"))
         XCTAssertFalse(loginView.loginFunc(name: "", email: "", password: "password"))
         XCTAssertTrue(loginView.loginFunc(name: "", email: "testUser@umass.edu", password: "password"))
         XCTAssertFalse(loginView.loginFunc(name: "Test", email: "", password: "password"))
@@ -45,11 +44,18 @@ class LoginViewControllerTest: XCTestCase {
         XCTAssertFalse(loginView.loginFunc(name: "Test", email: "something@random.com", password: ""))
         XCTAssertFalse(loginView.loginFunc(name: "Test", email: "", password: ""))
          XCTAssertFalse(loginView.loginFunc(name: "fuck", email: "testUser", password: "password"))
-        
-        
-        
-        
+
+    }
+    
+    func actualLogin(){
         
     }
+    
+    
+    
+    
+    
+    
+    
     
 }

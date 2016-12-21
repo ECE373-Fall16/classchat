@@ -11,20 +11,19 @@ import Firebase
 
 
 
-class RegisterViewController: UIViewController {
+public class RegisterViewController: UIViewController {
     //@IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var verifypasswordField: UITextField!
     @IBOutlet weak var majorField: UITextField!
     
+    var BooleanVal = true
+    
 
     
     @IBAction func registerDidTouch(_ sender: AnyObject) {
-        let umasscheck = emailField.text
-        if (umasscheck!.hasSuffix("umass.edu")) && (emailField.text != "") && (passwordField.text != "") && (passwordField.text == verifypasswordField.text) {
-            
-            
+        if (registerUser(email: emailField.text!, password: passwordField.text!, verifyPassword: verifypasswordField.text!)){
             FIRAuth.auth()!.createUser(withEmail: emailField.text!, password: passwordField.text!) { user, error in
                 if let err: Error = error {
                     print(err.localizedDescription)
@@ -58,7 +57,14 @@ class RegisterViewController: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 }
             }
-        }else if ((emailField.text == "") || (passwordField.text == "") || (verifypasswordField.text == "")){
+        }
+    }
+    
+    
+     public func registerUser(email: String, password: String, verifyPassword: String) -> Bool{
+        if (((email.hasSuffix("umass.edu")) && (email != "") && (password != "") && (verifyPassword != "")) && (password == verifyPassword)) {
+            return true
+        }else if ((email == "") || (password == "") || (verifyPassword == "")){
             let alert = UIAlertController(title: "Error",
                                           message: "Please Fill in all Fields and try again",
                                           preferredStyle: .alert)
@@ -69,9 +75,9 @@ class RegisterViewController: UIViewController {
             alert.addAction(okayAction)
             
             self.present(alert, animated: true, completion: nil)
-            return
+            return false
             
-        }else if !(umasscheck?.hasSuffix("umass.edu"))!  {
+        }else if !(email.hasSuffix("umass.edu"))  {
             let alert = UIAlertController(title: "Error",
                                           message: "The email entered is not a valid UMass email address. Try again",
                                           preferredStyle: .alert)
@@ -82,9 +88,9 @@ class RegisterViewController: UIViewController {
             alert.addAction(okayAction)
             
             self.present(alert, animated: true, completion: nil)
-            return
+            return false
             
-        }else if (passwordField.text != verifypasswordField.text) {
+        }else if (password != verifyPassword) {
             let alert = UIAlertController(title: "Error",
                                           message: "Passwords do not match. Try Again",
                                           preferredStyle: .alert)
@@ -95,9 +101,8 @@ class RegisterViewController: UIViewController {
             alert.addAction(okayAction)
             
             self.present(alert, animated: true, completion: nil)
-            return
-            
-            
+            return false
+
         }else{
             let alert = UIAlertController(title: "FATAL",
                                           message: "UNKOWN ERROR",
@@ -109,12 +114,10 @@ class RegisterViewController: UIViewController {
             alert.addAction(okayAction)
             
             self.present(alert, animated: true, completion: nil)
-            return
+            return false
         }
     }
-
     
-
 
 
 
@@ -123,7 +126,7 @@ class RegisterViewController: UIViewController {
     }
 
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         

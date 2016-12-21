@@ -31,6 +31,7 @@ public class LoginViewController: UIViewController {
 	var ProfanityWords = [String]()
 	
 	var Boolean = false
+	var success = false
 	
 	
 	let loginToList = "LoginToList"
@@ -105,6 +106,7 @@ public class LoginViewController: UIViewController {
 			gname = self.nameField.text!
 			gemail = self.emailField.text!
 			self.performSegue(withIdentifier: "LoginToChat", sender: nil)
+			self.success = true
 			
 			
 		}
@@ -188,7 +190,7 @@ public class LoginViewController: UIViewController {
 	}
 	
 	
-	public func containsProfanity(text: String, Profanity: [String]) -> Bool {
+	func containsProfanity(text: String, Profanity: [String]) -> Bool {
 		return Profanity
 			.reduce(false) { $0 || text.lowercased() == ($1.lowercased()) }
 	}

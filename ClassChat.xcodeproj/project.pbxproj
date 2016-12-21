@@ -138,8 +138,8 @@
 			children = (
 				849EFE241E05DF57000A7A6D /* DisplayNameChooserTest.swift */,
 				84D5415E1E0471C5006C7A7C /* LoginViewControllerTest.swift */,
-				84D5416E1E047E97006C7A7C /* Info.plist */,
 				843A78A11E0A4C9E004DBE9C /* RegisterViewControllerTest.swift */,
+				84D5416E1E047E97006C7A7C /* Info.plist */,
 			);
 			path = ClassChatTests;
 			sourceTree = "<group>";

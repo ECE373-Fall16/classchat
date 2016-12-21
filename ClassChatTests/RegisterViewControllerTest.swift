@@ -10,26 +10,21 @@ import XCTest
 
 class RegisterViewControllerTest: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+    func testRegisterMultiple(){
+        let registerView = RegisterViewController()
+        XCTAssertFalse(registerView.registerUser(email: "", password: "", verifyPassword: ""))
+        XCTAssertFalse(registerView.registerUser(email: "", password: "", verifyPassword: "password"))
+        XCTAssertFalse(registerView.registerUser(email: "", password: "eggs", verifyPassword: "password"))
+        XCTAssertFalse(registerView.registerUser(email: "", password: "password", verifyPassword: "eggs"))
+        XCTAssertFalse(registerView.registerUser(email: "testuser", password: "password", verifyPassword: "password"))
+        XCTAssertFalse(registerView.registerUser(email: "testuser@gmail.com", password: "password", verifyPassword: "password"))
+        XCTAssertFalse(registerView.registerUser(email: "testuser@umass.edu", password: "password", verifyPassword: "Password"))
+        XCTAssertFalse(registerView.registerUser(email: "testuser@umass.edu", password: "", verifyPassword: "password"))
+        XCTAssertTrue(registerView.registerUser(email: "testuser@umass.edu", password: "password", verifyPassword: "password"))
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+        
+        
+        
 }
