@@ -30,6 +30,8 @@ public class LoginViewController: UIViewController {
 	var TOCPressed = false
 	var ProfanityWords = [String]()
 	
+	var Boolean = false
+	
 	
 	let loginToList = "LoginToList"
   
@@ -60,6 +62,7 @@ public class LoginViewController: UIViewController {
 
 
   @IBAction func loginDidTouch(_ sender: AnyObject) {
+	Boolean = false
 	 loginPressed = true
 	 registerPressed = false
 	 forgotPressed = false
@@ -115,10 +118,13 @@ public class LoginViewController: UIViewController {
 	
 	
 	public func loginFunc(name: String, email: String, password: String) -> Bool{
+		Boolean = false
 		
-		if ((name != "") && (password != "") && (!containsProfanity(text: name, Profanity: ProfanityWords)) && ((email.hasSuffix("umass.edu")) || (email == "alexj2space@gmail.com"))){
+		if ((email != "") && (password != "") && (!containsProfanity(text: name, Profanity: ProfanityWords)) && (((email.hasSuffix("umass.edu")) || (email == "alexj2space@gmail.com")))){
+			Boolean = true
 			
 		}else if(containsProfanity(text: name, Profanity: ProfanityWords)){
+			Boolean = false
 			let alert = UIAlertController(title: "Error",
 			                              message: "No Profanity",
 			                              preferredStyle: .alert)
@@ -129,6 +135,8 @@ public class LoginViewController: UIViewController {
 			alert.addAction(okayAction)
 			
 			present(alert, animated: true, completion: nil)
+			
+			
 		}else{
 			let alert = UIAlertController(title: "Error",
 			                              message: "Please Enter Valid UMass Email and Password or Register!",
@@ -141,8 +149,10 @@ public class LoginViewController: UIViewController {
 			
 			present(alert, animated: true, completion: nil)
 			
+
+			
 		}
-		return true
+		return Boolean
 	}
 	
 	
@@ -178,7 +188,7 @@ public class LoginViewController: UIViewController {
 	}
 	
 	
-	func containsProfanity(text: String, Profanity: [String]) -> Bool {
+	public func containsProfanity(text: String, Profanity: [String]) -> Bool {
 		return Profanity
 			.reduce(false) { $0 || text.lowercased() == ($1.lowercased()) }
 	}
@@ -218,20 +228,21 @@ public class LoginViewController: UIViewController {
 
 	
   // MARK: Navigation
-
-  override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    super.prepare(for: segue, sender: sender)
-	if loginPressed {
-		let navVc = segue.destination as! UINavigationController
-		let channelVc = navVc.viewControllers.first as! ChannelListViewController
-		
-		channelVc.senderDisplayName = emailField?.text
-	}else{
+	override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
+		if loginPressed {
+			let navVc = segue.destination as! UINavigationController
+			let channelVc = navVc.viewControllers.first as! ChannelListViewController
+			
+			channelVc.senderDisplayName = emailField?.text
+		}else{
+			
+		}
 		
 	}
+
+
 	
-  }
-  
   // MARK: - Notificat.ions
 	
   func keyboardWillShowNotification(_ notification: Notification) {

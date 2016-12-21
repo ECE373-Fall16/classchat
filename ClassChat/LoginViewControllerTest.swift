@@ -14,17 +14,37 @@ import Firebase
 @testable import ClassChat
 
 class LoginViewControllerTest: XCTestCase {
-    var viewController: LoginViewController!
+
+    
+    
+    
     
     override func setUp() {
         super.setUp()
-        viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-    
+        do {
+            // This solution assumes  you've got the file in your bundle
+            if let path = Bundle.main.path(forResource: "ProfanityFile", ofType: "txt"){
+                let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+                ProfanityWords = data.components(separatedBy: "\r\n")
+            }
+        } catch let err as NSError {
+            print("Error with importing file")
+            print(err)
+        }
+
     }
     
     func testLoginMultiple(){
         let loginView = LoginViewController()
-        XCTAssert(loginView.loginFunc(name: "fuck", email: String, password: String))
+        XCTAssertTrue(loginView.loginFunc(name: "Test", email: "testUser@umass.edu", password: "password"))
+        XCTAssertFalse(loginView.loginFunc(name: "fuck", email: "testUser@umass.edu", password: "password"))
+        XCTAssertFalse(loginView.loginFunc(name: "", email: "", password: "password"))
+        XCTAssertTrue(loginView.loginFunc(name: "", email: "testUser@umass.edu", password: "password"))
+        XCTAssertFalse(loginView.loginFunc(name: "Test", email: "", password: "password"))
+        XCTAssertFalse(loginView.loginFunc(name: "Test", email: "something@random.com", password: "password"))
+        XCTAssertFalse(loginView.loginFunc(name: "Test", email: "something@random.com", password: ""))
+        XCTAssertFalse(loginView.loginFunc(name: "Test", email: "", password: ""))
+         XCTAssertFalse(loginView.loginFunc(name: "fuck", email: "testUser", password: "password"))
         
         
         
