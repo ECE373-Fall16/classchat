@@ -11,7 +11,7 @@
 import UIKit
 import XCTest
 import Firebase
-import ClassChat
+@testable import ClassChat
 
 class LoginViewControllerTest: XCTestCase {
     var viewController: LoginViewController!
@@ -22,15 +22,14 @@ class LoginViewControllerTest: XCTestCase {
     
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testLoginMultiple(){
+        let loginView = LoginViewController()
+        XCTAssert(loginView.loginFunc(name: "fuck", email: String, password: String))
+        
+        
+        
+        
+        
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
     
 }
